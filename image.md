@@ -4,7 +4,14 @@ layout: page
 nav_order: 17
 ---
 # Sovolized Armbian Klipper Image
-### For SV06/SV06+/SV07/SV07+ KlipperScreen (Makerbase MKS KLIPAD50)
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
+
+## For SV06/SV06+/SV07/SV07+ KlipperScreen (Makerbase MKS KLIPAD50)
 
 A ready-to-use replacement image for Sovol's KlipperScreen can be downloaded at:  
     

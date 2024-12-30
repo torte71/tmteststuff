@@ -3,7 +3,13 @@ title: Booting
 layout: page
 nav_order: 15
 ---
-## Booting
+# Booting
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
 There are different options for booting from an external device (useful e.g. to reflash the eMMC)
 

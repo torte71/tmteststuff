@@ -3,7 +3,13 @@ title: Screen
 layout: page
 nav_order: 12
 ---
-### Screen
+# Screen
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
   * Rotation: Edit /etc/X11/xorg.conf.d/01-armbian-defaults.conf
     * default:
