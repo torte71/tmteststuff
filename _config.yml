@@ -3,11 +3,11 @@ description: Just for testing
 theme: just-the-docs
 #theme: jekyll-theme-slate
 #logo: "your_logo_path"
-#favicon_ico: "favicon.ico"
+favicon_ico: "favicon.ico"
 
 #url: https://github.com/torte71/tmteststuff
 url: https://torte71.github.io/tmteststuff
 
 aux_links:
   Repository: https://github.com/torte71/tmteststuff
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  #Template Repository: https://github.com/just-the-docs/just-the-docs-template
