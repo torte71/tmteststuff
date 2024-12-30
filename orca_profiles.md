@@ -1,6 +1,7 @@
 ---
 title: Orca Profiles
 layout: page
+nav_order: 2
 ---
 ## Slicing / Design
 

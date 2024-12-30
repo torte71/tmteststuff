@@ -1,5 +1,7 @@
 ---
-layout: minimal
+title: Configuring
+layout: page
+nav_order: 7
 ---
 ### Configuring
 

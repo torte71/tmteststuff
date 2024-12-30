@@ -1,6 +1,7 @@
 ---
 title: Shutdown (Windows Version)
 layout: page
+nav_order: 4.1
 ---
 ## Klipper Shutdown (Windows version)
 

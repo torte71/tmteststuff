@@ -1,6 +1,7 @@
 ---
 title: Firmware
 layout: page
+nav_order: 3
 ---
 ### Firmware
 
