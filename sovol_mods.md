@@ -92,23 +92,6 @@ Binary file /root/hid-flash matches
 /var/lib/dpkg/info/makerbase-client.list:/root/hid-flash
 ```
 
-<details>
-  <summary>Click me</summary>
-  
-  ### Heading
-  1. Foo
-  2. Bar
-     * Baz
-     * Qux
-
-  ### Some Javascript
-  ```js
-  function logSomething(something) {
-    console.log('Something', something);
-  }
-  ```
-</details>
-
   * uart
     * **unknown binary, source code missing**
     * references:
@@ -119,6 +102,7 @@ Binary file /root/hid-flash matches
 
   * udp_server
     * **unknown binary, source code missing**
+    * references:
 ```
 /var/lib/dpkg/info/makerbase-client.md5sums:6f515dc45b55e81f496c64036318c75e  root/udp_server
 /var/lib/dpkg/info/makerbase-client.list:/root/udp_server
