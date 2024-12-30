@@ -3,13 +3,13 @@ title: Orca Profiles
 layout: page
 nav_order: 2
 ---
+# Orca profiles
+{: .no_toc }
 ### Contents:
 {: .no_toc }
 - TOC
 {:toc}
 ----
-
-# Orca profiles
 
 ## joescalon SV06+ profile+buildplate
   * <https://www.printables.com/de/model/508400-sv06-plus-profiles-and-build-plate/files>
