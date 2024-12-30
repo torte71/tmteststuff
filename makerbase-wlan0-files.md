@@ -3,9 +3,15 @@ title: makerbase-wlan0.service files
 layout: page
 parent: Modifications by Sovol
 ---
-### makerbase-wlan0.service files
+# makerbase-wlan0.service files
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
-#### /usr/lib/systemd/system/makerbase-wlan0.service
+## /usr/lib/systemd/system/makerbase-wlan0.service
 ```
 [Unit]
 Description=Makerbasi mkspi WPA supplicant daemon
@@ -21,7 +27,7 @@ ExecStart=/sbin/wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant-wlan0.conf -
 Alias=multi-user.target.wants/makerbase-wlan0.service
 ```
 
-#### /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
+## /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
 ```
 ctrl_interface=DIR=/run/wpa_supplicant GROUP=netdev
 update_config=1
