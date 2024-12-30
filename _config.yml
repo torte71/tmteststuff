@@ -6,8 +6,9 @@ theme: just-the-docs
 favicon_ico: "favicon.ico"
 # search does not work with jekyll-relative-links :(
 search_enabled: false
-back_to_top: true
-back_to_top_text: "Back to top"
+# requires footer generation
+#back_to_top: true
+#back_to_top_text: "Back to top"
 
 plugins:
   - jekyll-relative-links
