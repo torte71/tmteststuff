@@ -4,10 +4,11 @@ theme: just-the-docs
 #theme: jekyll-theme-slate
 #logo: "your_logo_path"
 favicon_ico: "favicon.ico"
-#search_enabled: true
+# search does not work with jekyll-relative-links :(
+search_enabled: false
 
-#plugins:
-#  - jekyll-relative-links
+plugins:
+  - jekyll-relative-links
 
 #url: https://github.com/torte71/tmteststuff
 url: https://torte71.github.io/tmteststuff
