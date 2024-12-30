@@ -3,6 +3,8 @@ title: Home
 layout: home
 nav_order: 1
 ---
+{:toc}
+
 # General 3D printing
 
 ## Slicing / Design
