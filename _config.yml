@@ -5,6 +5,9 @@ theme: just-the-docs
 #logo: "your_logo_path"
 favicon_ico: "favicon.ico"
 
+plugins:
+  - jekyll-relative-links
+
 #url: https://github.com/torte71/tmteststuff
 url: https://torte71.github.io/tmteststuff
 
