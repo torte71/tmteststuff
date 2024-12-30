@@ -3,6 +3,9 @@ title: Firmware
 layout: page
 nav_order: 3
 ---
+- TOC
+{:toc}
+
 ### Firmware
 
 #### Where to download
