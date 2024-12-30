@@ -57,6 +57,7 @@ Thanks to Vasyl Gontar for his additions/corrections to this list.
   * hid-flash
     * **unknown binary, source code missing**
     * probably precompiled `klipper/lib/hidflash`
+    * <details open><summary>references:</summary>
 ```
 /home/mks/ff-hid-flash.txt:Binary file /home/mks/_root/hid-flash matches
 /home/mks/klipper/src/stm32/Makefile:lib/hidflash/hid-flash:
@@ -90,13 +91,18 @@ Binary file /root/hid-flash matches
 /var/lib/dpkg/info/makerbase-client.md5sums:ef3573cd08e43b74bbd22ab2dfe68f3b  root/hid-flash
 /var/lib/dpkg/info/makerbase-client.list:/root/hid-flash
 ```
+</details>
 
   * uart
     * **unknown binary, source code missing**
+    * references:
+<details open>
+  <summary>references:</summary>
 ```
 (tons of references found -> left out)
 /var/lib/dpkg/info/makerbase-client.list:/root/uart
 ```
+</details>
 
   * udp_server
     * **unknown binary, source code missing**
