@@ -1,5 +1,5 @@
 ---
-title: Shutdown (Windows Version)
+title: Shutdown
 layout: page
 nav_order: 4.1
 ---

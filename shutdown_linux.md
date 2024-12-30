@@ -2,6 +2,7 @@
 title: Shutdown (Linux Version)
 layout: page
 nav_order: 4.2
+parent: Shutdown
 ---
 ## Klipper Shutdown (Linux version)
 
