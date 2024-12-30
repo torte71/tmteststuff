@@ -1,5 +1,5 @@
 ---
-title: Inside
+title: Home
 layout: home
 ---
 # General 3D printing

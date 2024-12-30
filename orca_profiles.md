@@ -1,5 +1,6 @@
 ---
-layout: about
+title: Orca Profiles
+layout: page
 ---
 ## Slicing / Design
 

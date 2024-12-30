@@ -1,4 +1,5 @@
 ---
+title: Shutdown (Windows Version)
 layout: page
 ---
 ## Klipper Shutdown (Windows version)

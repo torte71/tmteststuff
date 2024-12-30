@@ -1,5 +1,6 @@
 ---
-layout: post
+title: Shutdown (Linux Version)
+layout: page
 ---
 ## Klipper Shutdown (Linux version)
 
