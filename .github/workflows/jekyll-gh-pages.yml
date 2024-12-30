@@ -37,6 +37,10 @@ jobs:
           ruby-version: '3.3' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
+      - name: Init Search
+        run: bundle exec rake search:init
+        env:
+          BUNDLE_GEMFILE: fixtures/Gemfile-jekyll-${{ matrix.jekyll-version }}
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
