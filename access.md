@@ -114,5 +114,5 @@ Here you will find several ways to log into the KlipperScreen.
 
 
 ----
-Back to [start](index.html)
+Back to [start](index.md)
 

@@ -169,7 +169,7 @@ bash hs110_off
 ```
 
 ----
-Back to [shutdown](shutdown.html)
+Back to [shutdown](shutdown.md)
 
 ----
-Back to [start](index.html)
+Back to [start](index.md)
