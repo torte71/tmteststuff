@@ -12,13 +12,12 @@ has_toc: false
 {:toc}
 ----
 
-----
-
-**Do not simply power off the device by the switch.**
-
-**Shut it down using either the web interface or the buttons on the KlipperScreen first.**
-
-**Just powering it off can -and does- lead to damaged files.**
+{: .warning }
+> **Do not simply power off the device by the switch.**
+> 
+> **Shut it down using either the web interface or the buttons on the KlipperScreen first.**
+> 
+> **Just powering it off can -and does- lead to damaged files.**
 
 ----
 
