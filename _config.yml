@@ -4,6 +4,7 @@ theme: just-the-docs
 #theme: jekyll-theme-slate
 #logo: "your_logo_path"
 favicon_ico: "favicon.ico"
+search_enabled: true
 
 plugins:
   - jekyll-relative-links
