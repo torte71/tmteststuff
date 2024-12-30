@@ -1,4 +1,5 @@
 ---
+layout: home
 ---
 # General 3D printing
 
