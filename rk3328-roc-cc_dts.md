@@ -1,6 +1,7 @@
 ---
 title: rk3328-roc-cc
 layout: page
+parent: Rebuilding
 ---
 ## rk3328-roc-cc
 
