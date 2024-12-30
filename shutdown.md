@@ -54,21 +54,21 @@ To power it on, execute `hs110_on.cmd`.
 
 ----
 
-## hs110_off.cmd
+### hs110_off.cmd
   * Replace the "192.168.1.60" with the actual IP address of your HS110 wifi power plug.
   * See <#troubleshooting> if this command does not power off the device  
 ```
 tplink_smartplug.py -t 192.168.1.60 -c off
 ```
 
-## hs110_on.cmd
+### hs110_on.cmd
   * Replace the "192.168.1.60" with the actual IP address of your HS110 wifi power plug.
   * See [Troubleshooting](#troubleshooting) if this command does not power on the device  
 ```
 tplink_smartplug.py -t 192.168.1.60 -c on
 ```
 
-## mks_poweroff.cmd
+### mks_poweroff.cmd
   * Adjust PRINTER to the name or IP address of your KlipperScreen device
   * Adjust PLINKCMD to match your putty installation.
   * For login using clear text password (not recommended, but simpler):
@@ -115,7 +115,7 @@ set POWERCMD="echo %PASSWORD%|sudo -S poweroff"
 %PLINKCMD% %OPTPW% %OPTKEY% -batch %USERNAME%@%PRINTER% %POWERCMD%
 ```
 
-## shutdown_sv06.cmd
+### shutdown_sv06.cmd
   * Adjust PRINTER to the name or IP address of your KlipperScreen device
 
 ```
