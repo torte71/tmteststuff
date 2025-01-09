@@ -125,7 +125,7 @@ You will probably have to change "spidev0.0" to "spidev0.2" inside your "printer
 
 ## numpy
 
-Numpy is required for input shaping, so it's a good idea to install it right now.
+Numpy is required for input shaping, so it's a good idea to install it right now.  
 (Thanks to Vasyl Gontar for this hint)
 ```
 sudo apt-get update
