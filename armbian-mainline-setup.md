@@ -91,11 +91,11 @@ Image used: <https://github.com/armbian/community/releases/download/25.2.0-trunk
 
 The following steps require a working internet connection
 
-- automatically fix dtb after each install:
-  `wget https://torte71.github.io/InsideSovolKlipperScreen/files/rk3328-roc-cc.dtb`
-  `sudo dpkg -i rk3328-roc-cc.dtb`
-  Idea based on <https://askubuntu.com/questions/63717/execute-command-after-dpkg-installation>
-  [rk3328-mkspi.dtb](files/rk3328-mkspi.dtb)
+- automatically fix dtb after each install:  
+  `wget https://torte71.github.io/InsideSovolKlipperScreen/files/rk3328-roc-cc.dtb`  
+  `sudo dpkg -i rk3328-roc-cc.dtb`  
+  Idea based on <https://askubuntu.com/questions/63717/execute-command-after-dpkg-installation>  
+  [rk3328-mkspi.dtb](files/rk3328-mkspi.dtb)  
   (this is exactly the same as previous "rk3328-roc-cc.dtb", just renamed)
 
 - install "git" for downloading kiauh:
