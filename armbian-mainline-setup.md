@@ -34,7 +34,7 @@ Nightly builds: <https://github.com/armbian/community/releases>
 Image used: <https://github.com/armbian/community/releases/download/25.2.0-trunk.293/Armbian_community_25.2.0-trunk.293_Mkspi_bookworm_current_6.12.8_minimal.img.xz>
 
 - write image to emmc
-- replace boot/rockchip/rk3328-mkspi.dtb for wifi
+- replace boot/rockchip/rk3328-mkspi.dtb with this [rk3328-mkspi.dtb](files/rk3328-mkspi.dtb) to enable wifi
 - enable serial access:
   - power up without emmc
   - keep power button pressed for soft-off
@@ -92,8 +92,8 @@ Image used: <https://github.com/armbian/community/releases/download/25.2.0-trunk
 The following steps require a working internet connection
 
 - automatically fix dtb after each install:  
-  `wget https://torte71.github.io/InsideSovolKlipperScreen/files/rk3328-roc-cc.dtb`  
-  `sudo dpkg -i rk3328-roc-cc.dtb`  
+  `wget https://torte71.github.io/InsideSovolKlipperScreen/files/klipad50-dtb-fix.deb`
+  `sudo dpkg -i klipad50-dtb-fix.deb`  
   Idea based on <https://askubuntu.com/questions/63717/execute-command-after-dpkg-installation>  
   [rk3328-mkspi.dtb](files/rk3328-mkspi.dtb)  
   (this is exactly the same as previous "rk3328-roc-cc.dtb", just renamed)
