@@ -92,7 +92,7 @@ Image used: <https://github.com/armbian/community/releases/download/25.2.0-trunk
 The following steps require a working internet connection
 
 - automatically fix dtb after each install:  
-  FOR FUTURE - DONT USE --- `wget https://torte71.github.io/InsideSovolKlipperScreen/files/klipad50-dtb-fix.deb`  
+  FOR FUTURE - DONT USE YET --- wget https://torte71.github.io/InsideSovolKlipperScreen/files/klipad50-dtb-fix.deb  
   `wget https://torte71.github.io/tmteststuff/files/klipad50-dtb-fix.deb`  
   `sudo dpkg -i klipad50-dtb-fix.deb`  
   Idea based on <https://askubuntu.com/questions/63717/execute-command-after-dpkg-installation>  
