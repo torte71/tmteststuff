@@ -252,16 +252,28 @@ sudo service klipper restart
 Now you should have a working Klipper installation (with just a basic "printer.cfg").
 
 ### Adding Makerbase services/additions  
-  (See [sovol_mods](sovol_mods.html) for details about the packages)
+(See [sovol_mods](sovol_mods.html) for details about the packages)
+
+{: .note }
+> The next steps need to be done as root.
+>
+> Execute 
+````
+sudo su
+cd
+```
+>
+> And when you are done, execute `exit` to switch back to the default user.
+
   * Beeps when pressing touchscreen
-    * Download: [makerbase-beep-service.deb](files/makerbase-beep-service.deb)
-    * To install:
-      * Upload the *.deb to your device, e.g. using the web-frontend: Navigate to "G-CODE-FILES", then use the upload button (the one with the up-arrow). Or use scp, winscp or whatever you like.
-      * Log into the device (ssh/putty/serial)
-      * Execute `sudo dpkg -i printer_data/gcodes/makerbase-beep-service.deb`
-      * (change the path, if you've uploaded to a different location)
+    * Uses [makerbase-beep-service.deb](files/makerbase-beep-service.deb)
+    * To install, execute 
+```
+wget https://torte71.github.io/tmteststuff/files/makerbase-beep-service.deb
+dpkg -i makerbase-beep-service.deb
+```
       * Fix access rights to gpio82:
-        * Execute `sudo nano /etc/rc.local`
+        * Execute `nano /etc/rc.local`
         * Add following lines (before the `exit 0` line)
 ```
 chgrp mks /sys/class/gpio/gpio82/value
@@ -272,12 +284,24 @@ chmod g+w /sys/class/gpio/gpio82/value
       * Execute `sudo dpkg -r makerbase-beep-service`
 
   * Automounting USB-drive
-    * Download: [makerbase-automount-service.deb](files/makerbase-automount-service.deb)
-    * Install/uninstall with `dpkg -i`/`dpkg -r` as shown above
+    * Uses [makerbase-automount-service.deb](files/makerbase-automount-service.deb)
+    * To install, execute 
+```
+wget https://torte71.github.io/tmteststuff/files/makerbase-automount-service.deb
+dpkg -i makerbase-automount-service.deb
+```
+    * To uninstall:
+      * Execute `sudo dpkg -r makerbase-automount-service`
 
   * Powerloss recovery (plr)
-    * Unofficial package: [plr-klipper.deb](files/plr-klipper.deb)
-    * Install/uninstall with `dpkg -i`/`dpkg -r` as shown above
+    * Uses unofficial package: [plr-klipper.deb](files/plr-klipper.deb)
+    * To install, execute 
+```
+wget https://torte71.github.io/tmteststuff/files/plr-klipper.deb
+dpkg -i plr-klipper.deb
+```
+    * To uninstall:
+      * Execute `sudo dpkg -r plr-klipper`
     * Sovol's [printer.cfg](https://github.com/Sovol3d/SOVOL_KLIPAD50_SYSTEM/tree/main/klipper_configuration) makes use of `plr`, so it's recommended to either install this package, or remove these entries as shown [here](sovol_mods.html#reverting)
 
   * Splash screen
