@@ -152,11 +152,6 @@ dpkg -i klipad50-dtb-fix.deb
 
 - Install "git" (required for downloading KIAUH):  
   Execute `apt install git`
-```
-apt install git
-cd
-git clone https://github.com/dw-0/kiauh
-```
 
 ### Setting up Klipper
 
@@ -178,19 +173,23 @@ git clone https://github.com/dw-0/kiauh
 cd /kiauh
 ./kiauh.sh
 ```
-  - Use the default setting for *every* question (i.e. just press ENTER)
+  - Use the default setting for *every* question (i.e. just press ENTER, unless it asks for a password)
   - Skip options 5 and 6 from the "Install" menu, but select all other
-  - 1 (Yes) ("Try KIAUH v6?")
-    - 1 (Install)
-      - 1 (Klipper)
-      - 2 (Moonraker)
-      - 3 (Mainsail)
-      - 4 (Fluidd)
-      - 7 (KlipperScreen)
-      - 8 (Crowsnest)
-    - E (Extensions)
-      - 1 (G-Code Shell Command)
-        - 1 (Install)
+  - Choose the following options:
+    - 1 (Yes) ("Try KIAUH v6?")
+      - 1 (Install)
+	- 1 (Klipper)
+	- 2 (Moonraker)
+	- 3 (Mainsail)
+	- 4 (Fluidd)
+	- 7 (KlipperScreen)
+	- 8 (Crowsnest)
+	- B (Back)
+      - E (Extensions)
+	- 1 (G-Code Shell Command)
+	  - 1 (Install)
+	- B (Back)
+      - Q (Quit)
 
 - Adjust screen rotation  
   - Execute `sudo nano /etc/X11/xorg.conf.d/01-armbian-defaults.conf`
@@ -227,26 +226,26 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev libopenblas-
   - Select "Micro-controller Architecture" (press ENTER)
   - Select "Linux process" (press ENTER)
   - Press "Q" and "Y" to quit and save
-  - ```sudo make flash```
-  - ```sudo cp ./scripts/klipper-mcu.service /etc/systemd/system/```
-  - ```sudo systemctl enable klipper-mcu.service```
-  - ```sudo service klipper restart```
-
+  - Execute
+```
+make
+sudo make flash
+sudo cp ./scripts/klipper-mcu.service /etc/systemd/system/
+sudo systemctl enable klipper-mcu.service
+sudo service klipper restart
+```
 
 - Compile Klipper for "mcu" (the printer board)  
   (as from https://github.com/bassamanator/Sovol-SV06-firmware/discussions/111):
   - Execute `cd ~/klipper`
   - Execute `make menuconfig`
   - Change following settings ("=" are unchanged defaults)
-    - = Enable extra low-level configuration options: [*]
-    - = Micro-controller Architecture: STMicroelectronics STM32
+    - = Enable extra low-level configuration options: [ ]
+    - \* Micro-controller Architecture: STMicroelectronics STM32
     - \* Processor model: STM32F103
-    - \* Disable SWD at startup (for GigaDevice stm32f103 clones): [*]
     - \* Bootloader offset: 28KiB bootloader
-    - = Clock Reference: 8 MHz crystal
     - \* Communication interface: Serial (on USART1 PA10/PA9)
-    - = Baud rate for serial port: 250000
-  - Execute `make clean ; make`
+  - Execute `make clean && make`
   - Copy "out/klipper.bin" to SD-card and rename it (must end in ".bin")  
     !!! Use a different name than that from prior updates !!!
 
