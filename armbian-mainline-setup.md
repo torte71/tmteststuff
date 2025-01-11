@@ -12,12 +12,12 @@ has_toc: false
 {:toc}
 ----
 
-Since December 2024, the Makerbase kernel patches from Maxim Medvedev (redrathnure) have been included into mainline Armbian.  
+Since December 2024, the Makerbase kernel patches from Maxim Medvedev (redrathnure) have been included into mainline Armbian.
 That makes it possible to keep the kernel up-to-date (and probably even upgrading the distribution).
 
 It is still required to replace the DTB file with a special one tailored for the Klipad50, but that may change in the future.  
-For now I have added a dpkg hook that simply replaces the DTB file, whenever a dtb-package install/remove has been detected.
-(The DTB file [rk3328-mkspi.dtb](files/rk3328-mkspi.dtb) is exactly the same as the prior [rk3328-roc-cc.dtb](rk3328-roc-cc_dts.html), it is just renamed.)
+For now I have added a dpkg hook that simply replaces the DTB file, whenever a dtb-package install/remove has been detected
+(the DTB file [rk3328-mkspi.dtb](files/rk3328-mkspi.dtb) is exactly the same as the prior [rk3328-roc-cc.dtb](rk3328-roc-cc_dts.html), it is just renamed).
 
 ## Different image options
 
@@ -73,10 +73,12 @@ You have the choice between the [community-builds](https://github.com/armbian/co
 ### Initial setup
 - Press the power button to boot the device
 - Answer the account setup questions:
-  - enter root password (e.g. "makerbase"), repeat once more
-  - enter username (e.g. "mks")
-  - enter user password (e.g. "makerbase"), repeat once more
-  - enter real name (e.g. "Mks")
+  - Enter root password (e.g. "makerbase"), repeat once more
+  - Maxim's image will ask for the "default system command shell"
+    - Choose "1" for "bash" (unless you know better)
+  - Enter username (e.g. "mks")
+  - Enter user password (e.g. "makerbase"), repeat once more
+  - Enter real name (e.g. "Mks")
 
 ### Network setup
 The next steps are slightly different, depending if you use a) an USB-Ethernet adapter, b) WiFi with Maxim's image or c) WiFi with a community image
@@ -144,11 +146,12 @@ The following steps require a working internet connection
   Idea based on <https://askubuntu.com/questions/63717/execute-command-after-dpkg-installation>)
 ```
 wget https://torte71.github.io/tmteststuff/files/klipad50-dtb-fix.deb
-sudo dpkg -i klipad50-dtb-fix.deb
+dpkg -i klipad50-dtb-fix.deb
 ```
 <!-- DONT USE YET --- wget https://torte71.github.io/InsideSovolKlipperScreen/files/klipad50-dtb-fix.deb  -->
 
-- Install "git" (required for downloading KIAUH):
+- Install "git" (required for downloading KIAUH):  
+  Execute `apt install git`
 ```
 apt install git
 cd
@@ -167,10 +170,12 @@ git clone https://github.com/dw-0/kiauh
 >
 > (If the command prompt reads "root@mkspi", you are using the root account)
 
-- Set up Klipper using KIAUH:
-  - Execute
+- Set up Klipper
+  - Download and start KIAUH:
 ```
-cd ~/kiauh
+cd
+git clone https://github.com/dw-0/kiauh
+cd /kiauh
 ./kiauh.sh
 ```
   - Use the default setting for *every* question (i.e. just press ENTER)
