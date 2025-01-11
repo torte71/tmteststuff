@@ -187,7 +187,7 @@ cd ~/kiauh
       - 1 (G-Code Shell Command)
         - 1 (Install)
 
-- Adjust Screen rotation  
+- Adjust screen rotation  
   - Execute `sudo nano /etc/X11/xorg.conf.d/01-armbian-defaults.conf`
   - Copy this text:
 ```
@@ -217,7 +217,7 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev libopenblas-
 ~/klippy-env/bin/pip install -v numpy
 ```
 
-- Setting up secondary mcu: (see <https://www.klipper3d.org/RPi_microcontroller.html>)
+- Set up secondary mcu: (see <https://www.klipper3d.org/RPi_microcontroller.html>)
   - Execute `cd ~/klipper ; make menuconfig`
   - Select "Micro-controller Architecture" (press ENTER)
   - Select "Linux process" (press ENTER)
@@ -228,25 +228,61 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev libopenblas-
   - ```sudo service klipper restart```
 
 
-- Compiling klipper for "mcu" (the printer board)  
+- Compile Klipper for "mcu" (the printer board)  
   (as from https://github.com/bassamanator/Sovol-SV06-firmware/discussions/111):
   - Execute `cd ~/klipper`
   - Execute `make menuconfig`
   - Change following settings ("=" are unchanged defaults)
     - = Enable extra low-level configuration options: [*]
     - = Micro-controller Architecture: STMicroelectronics STM32
-    - * Processor model: STM32F103
-    - * Disable SWD at startup (for GigaDevice stm32f103 clones): [*]
-    - * Bootloader offset: 28KiB bootloader
+    - \* Processor model: STM32F103
+    - \* Disable SWD at startup (for GigaDevice stm32f103 clones): [*]
+    - \* Bootloader offset: 28KiB bootloader
     - = Clock Reference: 8 MHz crystal
-    - * Communication interface: Serial (on USART1 PA10/PA9)
+    - \* Communication interface: Serial (on USART1 PA10/PA9)
     - = Baud rate for serial port: 250000
   - Execute `make clean ; make`
   - Copy "out/klipper.bin" to SD-card and rename it (must end in ".bin")  
     !!! Use a different name than that from prior updates !!!
 
-- Add Makerbase services/additions
-  - Beep, Automount, Powerloss recovery (plr), 
+- Add Makerbase services/additions  
+  (See [sovol_mods](sovol_mods.html) for details about the packages)
+  * Beeps when pressing touchscreen
+    * Download: [makerbase-beep-service.deb](files/makerbase-beep-service.deb)
+    * To install:
+      * Upload the *.deb to your device, e.g. using the web-frontend: Navigate to "G-CODE-FILES", then use the upload button (the one with the up-arrow). Or use scp, winscp or whatever you like.
+      * Log into the device (ssh/putty/serial)
+      * Execute `sudo dpkg -i printer_data/gcodes/makerbase-beep-service.deb`
+      * (change the path, if you've uploaded to a different location)
+      * Fix access rights to gpio82:
+        * Execute `sudo nano /etc/rc.local`
+        * Add following lines (before the `exit 0` line)
+```
+chgrp mks /sys/class/gpio/gpio82/value
+chmod g+w /sys/class/gpio/gpio82/value
+```
+        * Save and exit the editor
+    * To uninstall:
+      * Execute `sudo dpkg -r makerbase-beep-service`
+
+  * Automounting USB-drive
+    * Download: [makerbase-automount-service.deb](files/makerbase-automount-service.deb)
+    * Install/uninstall with `dpkg -i`/`dpkg -r` as shown above
+
+  * Powerloss recovery (plr)
+    * Unofficial package: [plr-klipper.deb](files/plr-klipper.deb)
+    * Install/uninstall with `dpkg -i`/`dpkg -r` as shown above
+    * Sovol's [printer.cfg](https://github.com/Sovol3d/SOVOL_KLIPAD50_SYSTEM/tree/main/klipper_configuration) makes use of `plr`, so it's recommended to either install this package, or remove these entries as shown [here](sovol_mods.html#reverting)
+
+  * Splash screen
+    * Afaik it's not possible to directly use Sovols original boot animation, as it is in a different format (old kernel based vs. actual plymouth). The file resides in `/usr/lib/firmware/bootsplash.armbian` and is ~250MB big. I haven't found a way to decompile it into separate pictures - if someone does, it will probably be possible to "cook" a plymouth style boot animation from it.
+    * Enable plymouth splash screen:
+      * Become root: Execute `sudo su` (enter password when asked)
+      * Edit `/boot/armbianEnv.txt` and change it to `bootlogo=true`
+      * List available themes: Execute `plymouth-set-default-theme -l`
+      * Select a theme (e.g. "solar"): Execute `plymouth-set-default-theme solar ; update-initramfs -u`
+      * Restart the system: Execute `reboot`
+      * Themes are defined in `/usr/share/plymouth/themes/`
 
 - Set up printer.cfg (I include the standard SV06 version in the ready-to-use images)
 
