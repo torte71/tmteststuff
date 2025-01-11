@@ -17,6 +17,7 @@ That makes it possible to keep the kernel up-to-date (and probably even upgradin
 
 It is still required to replace the DTB file with a special one tailored for the Klipad50, but that may change in the future.  
 For now I have added a dpkg hook that simply replaces the DTB file, whenever a dtb-package install/remove has been detected.
+(The DTB file [rk3328-mkspi.dtb](files/rk3328-mkspi.dtb) is exactly the same as the prior [rk3328-roc-cc.dtb](rk3328-roc-cc_dts.html), it is just renamed.)
 
 ## Different image options
 
@@ -52,14 +53,14 @@ Image used: <https://github.com/armbian/community/releases/download/25.2.0-trunk
 
 ### Downloading and flashing the image
 - Choose an image file from the above links. I recommend Maxim's images, as they are easier to set up.  
-  Images used for testing:
-  Maxim (recommended): [1.0.1-25.2.0-trunk](https://github.com/redrathnure/armbian-mkspi/releases/download/mkspi%2F1.0.1-25.2.0-trunk/Armbian-unofficial_25.02.0-trunk_Mkspi_bookworm_current_6.12.8.img.xz)
-  Community: [25.2.0-trunk.293](https://github.com/armbian/community/releases/download/25.2.0-trunk.293/Armbian_community_25.2.0-trunk.293_Mkspi_bookworm_current_6.12.8_minimal.img.xz)
-- Extract the image (e.g. using [7zip](https://www.7-zip.org/))
-- Write the extracted .img file to the eMMC card (e.g. using [Balena Etcher](https://www.balena.io/etcher/))
+  - Images used for testing:
+    - Maxim's (recommended): [1.0.1-25.2.0-trunk](https://github.com/redrathnure/armbian-mkspi/releases/download/mkspi%2F1.0.1-25.2.0-trunk/Armbian-unofficial_25.02.0-trunk_Mkspi_bookworm_current_6.12.8.img.xz)
+    - Community (for the thrills): [25.2.0-trunk.293](https://github.com/armbian/community/releases/download/25.2.0-trunk.293/Armbian_community_25.2.0-trunk.293_Mkspi_bookworm_current_6.12.8_minimal.img.xz)
+- Extract the image (e.g. using [7zip](https://www.7-zip.org/)).
+- Write the extracted .img file to the eMMC card (e.g. using [Balena Etcher](https://www.balena.io/etcher/)).
 
 ### Preparing the image
-- Don't remove the eMMC card
+- Don't remove the eMMC card from the PC yet.
 - Use the Explorer to navigate to the "/boot/rockchip/" folder of the eMMC card
 - Replace `/boot/rockchip/rk3328-mkspi.dtb` with this [rk3328-mkspi.dtb](files/rk3328-mkspi.dtb) to get WiFi access directly after booting
 
@@ -107,9 +108,9 @@ The next steps are slightly different, depending if you use a) an USB-Ethernet a
   - When asked for generating locales:
     - If you use a user language other than english, you may want to select a different encoding from the list
     - Otherwise just use "330" to skip locale generation
-  - Continue at [Preparing Klipper setup]
+  - Continue at [Preparing Klipper setup](#preparing-klipper-setup)
 
-The next steps are **only required for the community image**:
+The next steps are **only required for the community image** (scroll down otherwise):
 - c) WiFi with a community image:
   - Answer "y" to "connect via wireless?" (or just press ENTER)  
     (Sadly, this just continues without asking to connect it to an access point, so no internet yet)
@@ -137,58 +138,15 @@ The next steps are **only required for the community image**:
     - Execute `nmtui`
     - Activate connection
       - select accesspoint
-	- enter password
+      - enter password
   - Troubleshooting network:
-    - Check this, if the screen has a long boot delay waiting for "systemd-networkd-wait-online.service"
+    - Check this, if the screen has a long boot delay waiting for "systemd-networkd-wait-online.service".
     - List the contents of "/etc/netplan/":  
       Execute `ls -l /etc/netplan/`
       - There should be no other file but "10-dhcp-all-interfaces.yaml".
       - Edit this file using `nano /etc/netplan/10-dhcp-all-interfaces.yaml`
       - Make sure it reads "renderer: NetworkManager" and not "renderer: networkd"  
 	(otherwise change that line in the editor and save it).
-<!--
-- if you have an usb-ethernet connected:
-  - "Set user language based on your location?"
-    - choose what you want. I prefer "no", cause untranslated error-messages are easier to google.
-
-- otherwise:
-  - "connect via wireless?" -> "y" (or just "ENTER")  
-    (that does not work yet. just ignore.)
-  - generate locales (e.g. "330" to skip)
-  - setup WiFi:
-    - `armbian-config`
-      - network
-	- ne001 - Configure network interfaces
-	  - ne002 - Add / change interface
-	    - wlan0 unassigned[wifi]
-	      - sta Connect to access point
-		- select WiFi Network
-		- enter password
-		- choose "OK"
-		- "Yes" (Changing network settings)
-- install NetworkManager:  
-  `apt update && apt install network-manager`
-- disable networkd:  
-  `systemctl disable systemd-networkd.service`
-- switch to NetworkManager:
-  - `armbian-config`
-    - network
-      - ne001 - Configure network interfaces
-	- reset to default
-  (this step changes /etc/netplan/10-dhcp-all-interfaces.yaml from networkd to NetworkManager)
-- setup wifi using NetworkManager:  
-  `nmtui`
-  - Activate connection
-    - select accesspoint
-      - enter password
-- Troubleshooting network:
-  - check this, if the screen has a long boot delay waiting for "systemd-networkd-wait-online.service"
-  - check /etc/netplan/
-    a) there should be no other file but "10-dhcp-all-interfaces.yaml"
-    b) make sure it reads "renderer: NetworkManager"
-       and not "renderer: networkd"
-       (otherwise edit it)
--->
 
 ### Preparing Klipper setup
 - If you didn't generate locales, you may want to set your timezone:
@@ -198,8 +156,8 @@ The next steps are **only required for the community image**:
 The following steps require a working internet connection
 
 - Download and install the Klipad50 DTB fix:  
-  (Automatically reinstalls [rk3328-mkspi.dtb](files/rk3328-mkspi.dtb) whenever a dtb-package install/remove has been detected.  
-   Idea based on <https://askubuntu.com/questions/63717/execute-command-after-dpkg-installation>)
+  (Automatically reinstalls [rk3328-mkspi.dtb](files/rk3328-mkspi.dtb) whenever a dtb-package install/remove has been detected.
+  Idea based on <https://askubuntu.com/questions/63717/execute-command-after-dpkg-installation>)
 ```
 wget https://torte71.github.io/tmteststuff/files/klipad50-dtb-fix.deb
 sudo dpkg -i klipad50-dtb-fix.deb
@@ -216,6 +174,7 @@ git clone https://github.com/dw-0/kiauh
 ### Setting up Klipper
 {: .note }
 > The next steps should be done as the Klipper user (these examples use "mks").
+>
 > *Do not do it as "root"!*
 >
 > So either use `exit` in the serial connection to log out and log in again as "mks"
