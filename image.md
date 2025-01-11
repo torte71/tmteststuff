@@ -1,9 +1,10 @@
 ---
-title: Sovolized Armbian Klipper Image
+title: Sovolized Armbian Klipper Image v24.2
 layout: page
+parent: Rebuilding on Armbian 24.2
 nav_order: 17
 ---
-# Sovolized Armbian Klipper Image
+# Sovolized Armbian Klipper Image v24.2
 {: .no_toc }
 ### Contents:
 {: .no_toc }

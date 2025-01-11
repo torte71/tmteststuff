@@ -1,7 +1,7 @@
 ---
 title: rk3328-roc-cc
 layout: page
-parent: Rebuilding
+parent: Rebuilding on Armbian v24.2
 ---
 ## rk3328-roc-cc
 
