@@ -27,7 +27,7 @@ Maxims image: [1.0.1-25.2.0-trunk; Armbian-unofficial_25.02.0-trunk_Mkspi_bookwo
 
 
 Please note that the **printer itself ("mcu") needs to be updated as well** (not just the KlipperScreen), otherwise it will complain about an outdated klipper version on the mcu and not be able to print.
-For convenience, there is a **ready compiled mcu_firmware.bin** in the image (which you can easily access directly after flashing, it's located in the root of the eMMC/USB-stick).
+For convenience, there is a **ready compiled klipper.bin** in the image (which you can easily access directly after flashing, it's located in the root of the eMMC/USB-stick).
 
 
 If you have an eMMC adapter, you can use these guides to flash the image:
