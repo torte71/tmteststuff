@@ -255,9 +255,8 @@ Now you should have a working Klipper installation (with just a basic "printer.c
 (See [sovol_mods](sovol_mods.html) for details about the packages)
 
 {: .note }
-> The next steps need to be done as root.
+> The next steps need to be done as root. Execute
 >
-> Execute 
 ````
 sudo su
 cd
