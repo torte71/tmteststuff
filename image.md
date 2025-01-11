@@ -12,6 +12,9 @@ nav_order: 17
 {:toc}
 ----
 
+{: .note }
+> There is a [newer version](armbian-mainline-image.html) for mainline Armbian v25.2
+
 ## For SV06/SV06+/SV07/SV07+ KlipperScreen (Makerbase MKS KLIPAD50)
 
 A ready-to-use replacement image for Sovol's KlipperScreen can be downloaded at:  
