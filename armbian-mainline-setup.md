@@ -290,10 +290,10 @@ chmod g+w /sys/class/gpio/gpio82/value
 If you have backups of your config files, you can upload them using mainsail or fluidd.
 
 Otherwise you can download a default config for your printer.  
-I recommend using one from [my fork](https://github.com/Sovol3d/SOVOL_KLIPAD50_SYSTEM/tree/main/klipper_configuration)
-rather than from [Sovol's site](https://github.com/torte71/SOVOL_KLIPAD50_SYSTEM/tree/main/klipper_configuration),
+I recommend using one from [my fork](https://github.com/torte71/SOVOL_KLIPAD50_SYSTEM/tree/main/klipper_configuration)
+rather than from [Sovol's site](https://github.com/Sovol3d/SOVOL_KLIPAD50_SYSTEM/tree/main/klipper_configuration),
 as Sovol's version of the SV06+ config is still broken.
 
 For the ready-to-use images I use the standard (non-plus) SV06 config, as it has the smallest bed defined,
-so the printhead/bed will not ram into the endstops on these models.
+so the printhead/bed will not accidentally ram into the endstops on the non-plus models.
 
