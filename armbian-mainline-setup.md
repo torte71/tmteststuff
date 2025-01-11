@@ -245,7 +245,9 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev libopenblas-
   - Copy "out/klipper.bin" to SD-card and rename it (must end in ".bin")  
     !!! Use a different name than that from prior updates !!!
 
-- Add Makerbase services/additions  
+Now you should have a working Klipper installation (with just a basic "printer.cfg").
+
+### Adding Makerbase services/additions  
   (See [sovol_mods](sovol_mods.html) for details about the packages)
   * Beeps when pressing touchscreen
     * Download: [makerbase-beep-service.deb](files/makerbase-beep-service.deb)
@@ -284,5 +286,14 @@ chmod g+w /sys/class/gpio/gpio82/value
       * Restart the system: Execute `reboot`
       * Themes are defined in `/usr/share/plymouth/themes/`
 
-- Set up printer.cfg (I include the standard SV06 version in the ready-to-use images)
+### Adding printer.cfg
+If you have backups of your config files, you can upload them using mainsail or fluidd.
+
+Otherwise you can download a default config for your printer.  
+I recommend using one from [my fork](https://github.com/Sovol3d/SOVOL_KLIPAD50_SYSTEM/tree/main/klipper_configuration)
+rather than from [Sovol's site](https://github.com/torte71/SOVOL_KLIPAD50_SYSTEM/tree/main/klipper_configuration),
+as Sovol's version of the SV06+ config is still broken.
+
+For the ready-to-use images I use the standard (non-plus) SV06 config, as it has the smallest bed defined,
+so the printhead/bed will not ram into the endstops on these models.
 
