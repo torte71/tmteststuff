@@ -33,23 +33,7 @@ You have the choice between the [community-builds](https://github.com/armbian/co
 - WiFi setup directly after boot is not working
 - Requires at least 25.2.0-trunk.195 to support MKSPI boards (select one with "Mkspi" in the name)
 
-<!--
-## Problems:
-
-Armbian v25 changed from NetworkManager to networkd (managed by netplan), but as KlipperScreen depends on NetworkManager, they need to be changed.
-
-Changing the network config over a network connection is not exactly fun, so use the serial console for the first steps, until you have correctly set up and switched to NetworkManager.  
-(You may as well plug in a keyboard and work directly on the touchdisplay, but you'll need good eyesight and the last line is almost impossible to see.)
--->
-
 ## Steps to create a "sovolish" Klipper installation based on these images:
-
-<!--
-Nightly builds: <https://github.com/armbian/community/releases>  
-(stable is first, scroll down for latest/nightly)
-
-Image used: <https://github.com/armbian/community/releases/download/25.2.0-trunk.293/Armbian_community_25.2.0-trunk.293_Mkspi_bookworm_current_6.12.8_minimal.img.xz>
--->
 
 ### Downloading and flashing the image
 - Choose an image file from the above links. I recommend Maxim's images, as they are easier to set up.  
@@ -183,7 +167,7 @@ git clone https://github.com/dw-0/kiauh
 >
 > (If the command prompt reads "root@mkspi", you are using the root account)
 
-- set up Klipper using KIAUH:
+- Set up Klipper using KIAUH:
   - Execute
 ```
 cd ~/kiauh
@@ -203,7 +187,7 @@ cd ~/kiauh
       - 1 (G-Code Shell Command)
         - 1 (Install)
 
-- Screen rotation  
+- Adjust Screen rotation  
   - Execute `sudo nano /etc/X11/xorg.conf.d/01-armbian-defaults.conf`
   - Copy this text:
 ```
@@ -220,10 +204,10 @@ Section "InputClass"
         Option "TransformationMatrix" "0 1 0 -1 0 1 0 0 1"
 EndSection
 ```
-    - press \<CTRL-X\> to quit
-    - press "Y" to save
-    - press ENTER to confirm filename
-    - restart KlipperScreen:
+    - Press \<CTRL-X\> to quit
+    - Press "Y" to save
+    - Press ENTER to confirm filename
+    - Restart KlipperScreen:
       - Execute `sudo service KlipperScreen restart`
 
 - Set up numpy (required for input shaping)
@@ -233,24 +217,36 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev libopenblas-
 ~/klippy-env/bin/pip install -v numpy
 ```
 
-- Set up secondary mcu: (see <https://www.klipper3d.org/RPi_microcontroller.html>)
+- Setting up secondary mcu: (see <https://www.klipper3d.org/RPi_microcontroller.html>)
   - Execute `cd ~/klipper ; make menuconfig`
   - Select "Micro-controller Architecture" (press ENTER)
   - Select "Linux process" (press ENTER)
-  - press "Q" and "Y" to quit and save
+  - Press "Q" and "Y" to quit and save
   - ```sudo make flash```
   - ```sudo cp ./scripts/klipper-mcu.service /etc/systemd/system/```
   - ```sudo systemctl enable klipper-mcu.service```
   - ```sudo service klipper restart```
 
 
-- update mcu
-```
-  ...
-```
+- Compiling klipper for "mcu" (the printer board)  
+  (as from https://github.com/bassamanator/Sovol-SV06-firmware/discussions/111):
+  - Execute `cd ~/klipper`
+  - Execute `make menuconfig`
+  - Change following settings ("=" are unchanged defaults)
+    - = Enable extra low-level configuration options: [*]
+    - = Micro-controller Architecture: STMicroelectronics STM32
+    - * Processor model: STM32F103
+    - * Disable SWD at startup (for GigaDevice stm32f103 clones): [*]
+    - * Bootloader offset: 28KiB bootloader
+    - = Clock Reference: 8 MHz crystal
+    - * Communication interface: Serial (on USART1 PA10/PA9)
+    - = Baud rate for serial port: 250000
+  - Execute `make clean ; make`
+  - Copy "out/klipper.bin" to SD-card and rename it (must end in ".bin")  
+    !!! Use a different name than that from prior updates !!!
 
-- add Makerbase services/additions
+- Add Makerbase services/additions
   - Beep, Automount, Powerloss recovery (plr), 
 
-- set up printer.cfg (I included the standard SV06 version)
+- Set up printer.cfg (I include the standard SV06 version in the ready-to-use images)
 
