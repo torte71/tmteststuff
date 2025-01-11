@@ -172,6 +172,7 @@ git clone https://github.com/dw-0/kiauh
 ```
 
 ### Setting up Klipper
+
 {: .note }
 > The next steps should be done as the Klipper user (these examples use "mks").
 >
