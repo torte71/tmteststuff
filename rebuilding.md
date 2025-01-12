@@ -56,7 +56,7 @@ Steps to set up:
   - cd into home dir: ```cd```
   - install KIAUH: ```git clone https://github.com/dw-0/kiauh```
   - start KIAUH: ```cd kiauh ; ./kiauh.sh```
-  - install klipper components (that's mostly pressing "1" or <ENTER>):
+  - install klipper components (that's mostly pressing "1" or ENTER):
   - choose "Install" (1)
   - enter your password
   - choose "Klipper" (1)
@@ -64,31 +64,31 @@ Steps to set up:
     - choose number of instances (1)
     - wait for install to finish
   - choose "Moonraker" (2)
-    - confirm with "Y" or <ENTER>
+    - confirm with "Y" or ENTER
     - wait for install to finish
   - choose "Mainsail" (3)
-    - when asked "Download recommended macros": confirm with "Y" or <ENTER>
+    - when asked "Download recommended macros": confirm with "Y" or ENTER
     - wait for install to finish
   - choose "Fluidd" (4)
     - when asked "Please enter a new Port": enter "81"
-    - when asked "Download recommended macros": confirm with "Y" or <ENTER>
+    - when asked "Download recommended macros": confirm with "Y" or ENTER
     - wait for install to finish
   - choose "KlipperScreen" (5)
     - wait for install to finish (will take quite a while)
-    - when asked "Install as a service?": confirm with "Y" or <ENTER>
+    - when asked "Install as a service?": confirm with "Y" or ENTER
   - choose "Crowsnest" (12)
     - wait for install to finish
-    - when asked "Do you want to add 'update manager'": confirm with "Y" or <ENTER>
-    - when asked "Reboot NOW? [y/N]": answer "N" or <ENTER>
+    - when asked "Do you want to add 'update manager'": confirm with "Y" or ENTER
+    - when asked "Reboot NOW? [y/N]": answer "N" or ENTER
   - choose "Back" (B)
   - choose "Advanced" (4)
     - choose "G-Code Shell Command" (8)
-    - when asked "Do you want to continue?": confirm with "Y" or <ENTER>
-    - when asked "Create an example shell command?": confirm with "Y" or <ENTER>
+    - when asked "Do you want to continue?": confirm with "Y" or ENTER
+    - when asked "Create an example shell command?": confirm with "Y" or ENTER
   - choose "Quit" (Q)
   - Set up secondary mcu: (see <https://www.klipper3d.org/RPi_microcontroller.html>) ```cd ~/klipper ; make menuconfig```
-    - select "Micro-controller Architecture" (press <ENTER>)
-    - select "Linux process" (press <ENTER>)
+    - select "Micro-controller Architecture" (press ENTER)
+    - select "Linux process" (press ENTER)
     - press "Q" and "Y" to quit and save
     - ```sudo make flash```
     - ```sudo cp ./scripts/klipper-mcu.service /etc/systemd/system/```
@@ -110,9 +110,9 @@ Section "InputClass"
         Option "TransformationMatrix" "0 1 0 -1 0 1 0 0 1"
 EndSection
 ```
-    - press <CTRL-X> to quit
+    - press \<CTRL-X\> to quit
     - press "Y" to save
-    - press <ENTER> to confirm filename
+    - press ENTER to confirm filename
     - restart KlipperScreen:```sudo service KlipperScreen restart```
   - Freeze the kernel
     - `sudo armbian-config`
@@ -127,7 +127,7 @@ You will probably have to change "spidev0.0" to "spidev0.2" inside your "printer
     
 (unless you've installed the wifi-enabled dtb below - in that case, it will be spidev0.0 again).
 
-## numpy
+## Numpy
 
 Numpy is required for input shaping, so it's a good idea to install it right now.  
 (Thanks to Vasyl Gontar for this hint)
@@ -221,7 +221,7 @@ Here is a compiled version of the devicetree file: [rk3328-roc-cc.dtb](files/rk3
 Download and replace `/boot/dtb/rockchip/rk3328-roc-cc.dtb` with this version and reboot.
 
 
-## crowsnest / camera streaming
+## Crowsnest / camera streaming
   * The camera device will probably change after the update. Use `v4l2-ctl --list-devices` to check the available devices and change `crowsnest.conf` accordingly. (My camera now uses `/dev/video3`)
   * crowsnest may have problems initializing the camera after reboot. Workarounds:
     * Manually restart crowsnest service (works reliably, but sucks)
