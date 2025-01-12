@@ -141,7 +141,7 @@ The next steps are **only required for the community image** (scroll down otherw
 
 The following steps require a working internet connection
 
-- Download and install the Klipad50 DTB fix:  
+- Download and install the [Klipad50 DTB fix](klipad50-dtb-fix.html):  
   (Automatically reinstalls [rk3328-mkspi.dtb](files/rk3328-mkspi.dtb) whenever a dtb-package install/remove has been detected.
   Idea based on <https://askubuntu.com/questions/63717/execute-command-after-dpkg-installation>)
 ```
