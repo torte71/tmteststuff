@@ -63,7 +63,6 @@ make menuconfig
 ```
 make clean ; make ; sudo make flash
 ```
-  - ("make flash" replaces "/usr/local/bin/klipper_mcu" with "out/klipper.elf")
 
 - **Compiling klipper for "mcu"** (the printer board):
 ```
@@ -80,7 +79,7 @@ make menuconfig
 ```
   - Copy "out/klipper.bin" to SD-card and rename it (must end in ".bin").  
     !!! Use a different name than that from prior updates (e.g. add some random numbers) !!!  
-    (The printer remebers the filename that was used for flashing and won't use it again.)
+    (The printer remembers the filename that was used for flashing and won't use it again.)
 
 
 ### Armbian Buster: End Of Life
@@ -92,7 +91,8 @@ The repositories for this version have been taken offline in spring 2024.
   * It is possible to flash a recent Armbian version, but it takes more than just a few mouseclicks.  
      See these guides:
     * Rebuilding from scratch using Maxim's Armbian bookworm:
-      * My guide: [Rebuilding](rebuilding.html)
+      * My recent guide (Armbian v25): [Rebuilding v25](armbian-mainline-setup.html)
+      * My previous guide (Armbian v24): [Rebuilding v24](rebuilding.html)
       * Vasyl's guide: <https://github.com/vasyl83/SV07update>
     * You can also find a readily prepared image (built as on my guide) here: [Image](image.html)
 
