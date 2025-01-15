@@ -50,7 +50,10 @@ See also: <https://github.com/3DPrintDemon/How-to-Update-Sovol-Klipper-Screen-To
          `sudo apt-mark hold linux-image-edge-rockchip64 linux-dtb-edge-rockchip64`
       c) Freeze the kernel using "armbian-config"  
 
-### Klipper-0.12.80+ (secondary mcu update)
+### Updating Klipper
+- First log into the device using ssh or putty
+- You need to recompile and install klipper *twice*.  
+  Once for the virtual mcu ("mcu-rpi") on the KlipperScreen, and another time for the printer-board ("mcu"), which needs to be flashed via SD-card after that.
 - **Compiling klipper for "mcu rpi"** (virtual mcu of the Klipper screen)
 ```
 cd klipper
