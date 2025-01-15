@@ -24,48 +24,48 @@ See also: <https://github.com/3DPrintDemon/How-to-Update-Sovol-Klipper-Screen-To
     - kernel on KlipperScreen is linux-5.16.20-rockchip64 (Version: 22.05.0-trunk)
       - This kernel is not found on the armbian servers (latest version: 5.16.11-rockchip64)
     - All standard kernels are incompatible:
-      - screen stays black
-      - wifi is not working
+      - Screen stays black
+      - WiFi is not working
       - "/dev/spidev*" is not created (touchscreen and accel-sensors require spidev)
   - **Fix:**
-    - **Revert to old kernel**
+    - **Revert to old kernel**  
       See [Factory reset using Sovol’s armbian-update.deb](bootloop.html#factory-reset-using-sovols-armbian-updatedeb)  
       a) Factory reset (kills all prior settings)  
          - Download the armbian-update.deb and flash it using an USB-stick (as shown in the previous link).  
       b) Revert just kernel (keeps settings)  
-         - Upload armbian-update.deb to your klipperscreen  
+         - Upload armbian-update.deb to your KlipperScreen.  
            E.g. using the web-frontend: Navigate to "Machine" and use the "upload file" button (or use scp or whatever for uploading).
-         - Use ssh/putty to log into your klipperscreen
-         - Change into the directory where you uploaded armbian-update.deb to  
-           for the mainsail example: "cd ~/printer_data/config"
+         - Use ssh/putty to log into your KlipperScreen.
+         - Change into the directory where you uploaded armbian-update.deb to.  
+           For the mainsail example: `cd ~/printer_data/config`
          - Extract kernel package:  
 	   `dpkg -x armbian-update.deb xtract`
          - Install (downgrade) kernel:  
 	   `sudo dpkg -i xtract/root/system_deb/linux-image-edge-rockchip64_22.05.0-trunk_arm64.deb`
-         - install (downgrade) the dtb file:  
+         - Install (downgrade) the dtb file:  
 	   `sudo cp xtract/home/mks/rk3328-roc-cc.dtb /boot/dtb/rockchip/`
     - **Keep that kernel-version** (choose one of the following options):  
-      a) Don't update "System" at all  
+      a) Don't update "System" at all.  
       b) Keep just that kernel-version (allows updating "System"):  
          `sudo apt-mark hold linux-image-edge-rockchip64 linux-dtb-edge-rockchip64`
-      c) Freeze the kernel using "armbian-config"  
+      c) Freeze the kernel using "armbian-config".  
 
 ### Updating Klipper
-- First log into the device using ssh or putty
+- First log into the device using ssh or putty.
 - You need to recompile and install klipper *twice*.  
   Once for the virtual mcu ("mcu-rpi") on the KlipperScreen, and another time for the printer-board ("mcu"), which needs to be flashed via SD-card after that.
-- **Compiling klipper for "mcu rpi"** (virtual mcu of the Klipper screen)
+- **Compiling klipper for "mcu rpi"** (virtual mcu of the Klipper screen):
 ```
 cd klipper
 make menuconfig
 ```
-  - Select "Micro-controller Architecture" and set to "Linux process"
+  - Select "Micro-controller Architecture" and set to "Linux process".
 ```
 make clean ; make ; sudo make flash
 ```
   - ("make flash" replaces "/usr/local/bin/klipper_mcu" with "out/klipper.elf")
 
-- **Compiling klipper for "mcu"** (the printer board)
+- **Compiling klipper for "mcu"** (the printer board):
 ```
 cd klipper
 make menuconfig
@@ -78,7 +78,7 @@ make menuconfig
 ```
   # make clean ; make
 ```
-  - copy "out/klipper.bin" to SD-card and rename it (must end in ".bin")  
+  - Copy "out/klipper.bin" to SD-card and rename it (must end in ".bin").  
     !!! Use a different name than that from prior updates (e.g. add some random numbers) !!!  
     (The printer remebers the filename that was used for flashing and won't use it again.)
 
