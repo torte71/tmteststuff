@@ -47,7 +47,7 @@ nav_order: 6
     - **Keep that kernel-version** (choose one of the following options):  
       a) Don't update "System" at all.  
       b) Keep just that kernel-version (allows updating "System"):  
-         `sudo apt-mark hold linux-image-edge-rockchip64 linux-dtb-edge-rockchip64`
+         `sudo apt-mark hold linux-image-edge-rockchip64 linux-dtb-edge-rockchip64`  
       c) Freeze the kernel using "armbian-config".  
 
 ### Updating Klipper
