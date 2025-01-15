@@ -11,7 +11,7 @@ nav_order: 6
 {:toc}
 ----
 
-See also: <https://github.com/3DPrintDemon/How-to-Update-Sovol-Klipper-Screen-To-Latest-Klipper-SV06-and-SV07>
+<!-- See also: <https://github.com/3DPrintDemon/How-to-Update-Sovol-Klipper-Screen-To-Latest-Klipper-SV06-and-SV07 -->
 
 ## Update Manager
 
