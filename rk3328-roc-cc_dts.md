@@ -25,7 +25,7 @@ To apply the patch by your own:
 ## Different versions
 
 There are 3 different versions of Sovol's dtb-file (my patched one not included):
-- The ones from armbian-update.deb and klipad50-20231229 are working and almost identical (the one from armbian-update.deb allows a slightly lower cpu voltage.
+- The ones from armbian-update.deb and klipad50-20231229 are working and almost identical (the one from armbian-update.deb allows a slightly lower cpu voltage).
 - The ones from klipad50-20230904 are *wrong* (e.g. missing WiFi).  Seems that Sovol used a wrong file in that image.
 - The klipad images come with an additional dtb directory, which is not used by the system.
 
@@ -3186,7 +3186,7 @@ There are 3 different versions of Sovol's dtb-file (my patched one not included)
 };
 ```
 
-### wifi patch
+## WiFi/spi-dev patch
 
 Patch to get spi-dev working:
 
