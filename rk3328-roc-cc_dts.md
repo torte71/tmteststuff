@@ -3186,7 +3186,7 @@ There are 3 different versions of Sovol's dtb-file (my patched one not included)
 };
 ```
 
-## WiFi/spi-dev patch
+## WiFi / spi-dev patch
 
 Patch to get spi-dev working:
 
