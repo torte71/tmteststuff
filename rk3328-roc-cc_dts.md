@@ -29,7 +29,7 @@ There are 3 different versions of Sovol's dtb-file (my patched one not included)
 - The ones from klipad50-20230904 are *wrong* (e.g. missing WiFi).  Seems that Sovol used a wrong file in that image.
 - The klipad images come with an additional dtb directory, which is not used by the system.
 
-1. armbian-update (for sv06/sv06+/sv07/sv07+)  
+1. **armbian-update.deb (for sv06/sv06+/sv07/sv07+)**  
    (from <https://wiki.sovol3d.com>)
    - sha256 checksums:
 ```
@@ -39,7 +39,7 @@ There are 3 different versions of Sovol's dtb-file (my patched one not included)
      ac662abec1bb434a079e478274a49cc8a374f257fa99a16f934441cb13a0010a  rk3328-roc-cc.sv07+.dtb
 ```
 
-2. Klipad50-image-20231229 (used)  
+2. **Klipad50-image-20231229** (used)  
    (from <https://wiki.sovol3d.com/en/SV07>)
    - sha256 checksums:
 ```
@@ -51,7 +51,7 @@ There are 3 different versions of Sovol's dtb-file (my patched one not included)
      regulators:DCDC_REG2("vdd_arm"):regulator-min-microvolt i = <0x155cc0>; # 0x155cc0=1400000; armbian-update: 0xe7ef0=950000
 ```
 
-3. Klipad50-image-20230904 (used+unused) + Klipad50-image-20231229 (unused)  
+3. **Klipad50-image-20230904** (used+unused) + Klipad50-image-20231229 (unused)  
    (from <https://github.com/Sovol3d/SOVOL_KLIPAD50_SYSTEM>)
    - sha256 checksums:
 ```
@@ -60,6 +60,7 @@ There are 3 different versions of Sovol's dtb-file (my patched one not included)
      fc43e183d8477e1d2d92d652a9a9e165e65bb1951a9dbefd035a15fe116ebfde  rk3328-roc-cc.20231229-unused.dtb
 ```
    - Differences to dtb from armbian-update.deb:
+
 ```
      analog-sound:status = "disable";   # armbian-update: "okay";
      hdmi-sound:status = "okay";        # armbian-update: "disabled";
