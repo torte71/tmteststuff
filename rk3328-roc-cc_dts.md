@@ -3205,7 +3205,8 @@ Patch to get spi-dev working:
 ```
 
 ----
-Back to [rebuilding](rebuilding.html)
+Back to [Rebuilding v24](rebuilding.html)  
+Back to [Rebuilding v25](armbian-mainline-setup.html)
 
 ----
 Back to [start](index.html)
