@@ -24,7 +24,7 @@ nav_order: 1
 ## Klipperized Sovol SV06+/SV07+ (mostly)
 
 ### Hardware
-  * MKS Klipad50 [hardware](hardware.html)
+  * [Hardware](hardware.html) description of the MKS Klipad50
 
 ### [Firmware](firmware.html)
   * [Where to download](firmware.html#where-to-download)
