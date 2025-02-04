@@ -2,7 +2,7 @@
 title: Orca Profiles
 layout: page
 parent: Configuring
-//nav_order: 2
+nav_order: 1
 ---
 # Orca profiles
 {: .no_toc }
