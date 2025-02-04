@@ -25,6 +25,7 @@ nav_order: 1
 
 ### Hardware
   * [Hardware](hardware.html) description of the MKS Klipad50
+  * Replaced [WiFi antenna](wifi.html)
 
 ### [Firmware](firmware.html)
   * [Where to download](firmware.html#where-to-download)
@@ -63,6 +64,9 @@ nav_order: 1
 ### [Configuring](configuring.html)
   * [Logging, etc.](configuring.html#logging-etc)
     * [Timezone updates spamming syslog](configuring.html#timezone-updates-spamming-syslog)
+  * [Extending storage space for gcode files](gcode_storage.html#expand-g-code-storage-space)
+  * [Beeper](beeper.html) script for Klipper macros
+  * [Screen rotation](screen.html) for KlipperScreen/Xorg
 
 ### Boot loops / Black screen ("unbricking")
   * [Boot loops / Black screen](bootloop.html)
@@ -73,18 +77,6 @@ nav_order: 1
       * [Cleaning up "saved_variables.cfg"](bootloop.html#cleaning-up-saved_variablescfg)
       * [Factory reset using Sovol's "armbian-update.deb"](bootloop.html#factory-reset-using-sovols-armbian-updatedeb)
       * [Full reflash of the eMMC using Sovol's KLIPAD50_IMAGE](bootloop.html#full-reflash-of-the-emmc-using-sovols-klipad50_image)
-
-### Expand G-Code storage space
-  * [Extending storage space for gcode files](gcode_storage.html#expand-g-code-storage-space)
-
-### Wifi
-  * [Better wifi antenna](wifi.html)
-
-### Beeper
-  * [Beeper](beeper.html)
-
-### Screen
-  * [Rotation](screen.html)
 
 ### [Getting Access / Log In](access.html)
   * [Serial (over USB)](access.html#serial-over-usb)

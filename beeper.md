@@ -1,9 +1,10 @@
 ---
 title: Beeper
 layout: page
-nav_order: 11
+parent: Configuring
+//nav_order: 11
 ---
-# Beeper
+# Beeper script (for Klipper macros)
 {: .no_toc }
 ### Contents:
 {: .no_toc }

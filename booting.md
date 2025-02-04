@@ -1,9 +1,9 @@
 ---
-title: Booting
+title: Booting (from USB and other)
 layout: page
 nav_order: 15
 ---
-# Booting
+# Booting (from USB and other)
 {: .no_toc }
 ### Contents:
 {: .no_toc }
