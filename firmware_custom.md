@@ -12,5 +12,4 @@ parent: Firmware
 
 ### Updated build instructions and ready Klipper images will follow very soon.
 
-
-See the [custom firmware archive](firmware_custom_archive.html) for previous instructions and images.
+#### See the [custom firmware archive](firmware_custom_archive.html) for previous instructions and images.
