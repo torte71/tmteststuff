@@ -5,6 +5,12 @@ parent: Custom firmware options
 nav_order: 1
 ---
 # Armbian images
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
 Support for the MKS-Klipad50 board is now integrated in mainline Armbian.
 
@@ -12,7 +18,7 @@ That means, that the kernel and the whole system can now simply be updated witho
 
 ## Download locations
 - Custom [Images](https://github.com/torte71/armbian-mksklipad50) on GitHub
-- Community Images on Armbian (soon)
+- Community Images on Armbian (coming soon)
 
 ## What works well
   - Summarized: Everything that worked with the original image.
@@ -61,20 +67,21 @@ chown mks:mks /sys/class/leds/firefly\:green\:power/\*
 
 After a reboot, the following commands will work for user "mks".
 
-- Turn LED on/off
+- Turn LED on/off:
   - Turn off: `echo "0" > /sys/class/leds/firefly:blue:user/brightness`
   - Turn on: `echo "1" > /sys/class/leds/firefly:blue:user/brightness`
 
-- Reverse on/off
+- Reverse on/off:
   - Normal behaviour: `echo "0" > /sys/class/leds/firefly:blue:user/invert`
   - Inverted behaviour: `echo "1" > /sys/class/leds/firefly:blue:user/invert`
 
-- Change trigger (what makes them blink)
+- Change trigger (what makes them blink):
   - Show possible triggers: `cat /sys/class/leds/firefly:blue:user/trigger`
     - Sample output: `none usb-gadget usb-host kbd-scrolllock kbd-numlock kbd-capslock kbd-kanalock kbd-shiftlock kbd-altgrlock kbd-ctrllock kbd-altlock kbd-shiftllock kbd-shiftrlock kbd-ctrlllock kbd-ctrlrlock disk-activity disk-read disk-write mtd nand-disk heartbeat cpu cpu0 cpu1 cpu2 cpu3 [activity] default-on panic usbport mmc2 mmc1 mmc0 rfkill-any rfkill-none rfkill0`
-    - The option in \[brackets\] is selected ("activity" in this example)
-  - Change trigger
-    - Display only emmc activity: `echo mmc1 > /sys/class/leds/firefly:blue:user/trigger`
+    - The option in \[brackets\] is currently selected ("activity" in this example)
+  - Change trigger:
+    - Choose a trigger name from that list and "echo" it to the "trigger" sysfs file.
+    - Example: Display emmc activity: `echo mmc1 > /sys/class/leds/firefly:blue:user/trigger`
 
 You might have guessed, that you can use "firefly:green:power" in these examples as well.
 
@@ -82,8 +89,8 @@ To use these commands without changing the access rights, you can use following 
 `echo activity |sudo tee /sys/class/leds/firefly:blue:user/trigger`
 
 Note: In the original Sovol image, these LEDs have wrong names (but work identical):
-- Blue LED: firefly:yellow:user
-- Green LED: firefly:blue:power
+- Blue LED: `firefly:yellow:user`
+- Green LED: `firefly:blue:power`
 
 
 ### Enable unsupported devices (devicetree overlays)
