@@ -36,7 +36,16 @@ nav_order: 1
 
 ### [Firmware](firmware.html)
 
-#### [Original firmware (by Sovol)](firmware_sovol.html)
+### [Custom firmware options](firmware_custom.html)
+  * [Archive](custom_firmware_archive.html)
+    * Armbian mainline v25.2
+      * [Rebuilding](armbian_mainline_setup.html)
+      * [Sovolized Armbian Klipper Image](armbian_mainline_image.html)
+    * Armbian v24.2
+      * [Rebuilding](rebuilding.html)
+      * [Sovolized Armbian Klipper Image](image.html)
+
+### [Original firmware (by Sovol)](firmware_sovol.html)
   * [Where to download](firmware.html#where-to-download)
   * [Updating](updating.html)
     * [Update manager](updating.html#update-manager)
@@ -46,16 +55,6 @@ nav_order: 1
       * [Armbian Buster: End Of Life](updating.html#armbian-buster-end-of-life)
       * [KlipperScreen / Python 3.8](updating.html#klipperscreen--python-38)
       * [Moonraker Timelapse](updating.html#moonraker-timelapse)
-
-#### [Custom firmware options](firmware_custom.html)
-  * [Archive](custom_firmware_archive.html)
-    * Armbian mainline v25.2
-      * [Rebuilding](armbian_mainline_setup.html)
-      * [Sovolized Armbian Klipper Image](armbian_mainline_image.html)
-    * Armbian v24.2
-      * [Rebuilding](rebuilding.html)
-      * [Sovolized Armbian Klipper Image](image.html)
-
 
 ### [Modifications by Sovol](sovol_mods.html#modifications_by_sovol)
   * [Files in /root](sovol_mods.html#files-in-root)
