@@ -1,7 +1,7 @@
 ---
 title: Rebuilding on Armbian-mainline v25.2
 layout: page
-parent: Firmware
+parent: Custom firmware archive
 //nav_order: 18
 has_toc: false
 ---
