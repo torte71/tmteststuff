@@ -68,7 +68,9 @@ nav_order: 1
   * [Beeper](beeper.html) macro (for use inKlipper)
   * [Screen rotation](screen.html) for KlipperScreen/Xorg
 
-### Boot loops / Black screen ("unbricking")
+### Troubleshooting
+
+#### Boot loops / Black screen ("unbricking")
   * [Boot loops / Black screen](bootloop.html)
     * [Some causes for the looping boot animation](bootloop.html#some-causes-for-the-looping-boot-animation)
     * [Typical causes for the damaged files](bootloop.html#typical-causes-for-the-damaged-files)
@@ -78,12 +80,12 @@ nav_order: 1
       * [Factory reset using Sovol's "armbian-update.deb"](bootloop.html#factory-reset-using-sovols-armbian-updatedeb)
       * [Full reflash of the eMMC using Sovol's KLIPAD50_IMAGE](bootloop.html#full-reflash-of-the-emmc-using-sovols-klipad50_image)
 
-### [Getting Access / Log In](access.html)
+#### [Getting Access / Log In](access.html)
   * [Serial (over USB)](access.html#serial-over-usb)
   * [USB-Keyboard](access.html#usb-keyboard)
   * [SSH (or putty)](access.html#ssh-putty)
 
-### Booting
+#### Booting
   * [Booting from external device](booting.html)
     * [Boot the same image from an USB-stick](booting.html#boot-the-same-image-from-an-usb-stick)
     * [Boot image from USB-stick via serial console](booting.html#boot-image-from-usb-stick-via-serial-console)

@@ -1,7 +1,8 @@
 ---
 title: Booting (from USB and other)
 layout: page
-nav_order: 15
+//nav_order: 15
+parent: Troubleshooting
 ---
 # Booting (from USB and other)
 {: .no_toc }
