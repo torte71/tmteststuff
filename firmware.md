@@ -1,7 +1,7 @@
 ---
 title: Firmware
 layout: page
-nav_order: 3
+nav_order: 2
 ---
 # Firmware
 {: .no_toc }

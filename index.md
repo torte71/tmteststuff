@@ -9,13 +9,6 @@ nav_order: 1
 > The author and this site are not affiliated to Sovol in any kind.  
 > The information provided here has been gathered from the web and by analyzing Sovol's KlipperScreen.
 
-# Klipperized Sovol SV06+/SV07+ (mostly)
-
-## Klipper Shutdown
-  * Scripts to safely shutdown.md klipper and power off using HS110 wifi.md power plug
-    * [Windows version](shutdown.html)
-    * [Linux version](shutdown_linux.html)
-
 # Sovol KlipperScreen (Makerbase MKS KLIPAD50)
 
 ## Hardware
@@ -98,4 +91,9 @@ nav_order: 1
     * [Boot the same image from an USB-stick](booting.html#boot-the-same-image-from-an-usb-stick)
     * [Boot image from USB-stick via serial console](booting.html#boot-image-from-usb-stick-via-serial-console)
     * [Boot from USB-stick with unbootable eMMC](booting.html#boot-from-usb-stick-with-unbootable-emmc)
+
+## Klipper Shutdown
+  * Scripts to safely shutdown.md klipper and power off using HS110 wifi.md power plug
+    * [Windows version](shutdown.html)
+    * [Linux version](shutdown_linux.html)
 
