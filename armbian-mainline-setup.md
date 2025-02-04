@@ -1,7 +1,8 @@
 ---
 title: Rebuilding on Armbian-mainline v25.2
 layout: page
-nav_order: 18
+parent: Firmware
+//nav_order: 18
 has_toc: false
 ---
 # Rebuilding on Armbian-mainline v25.2

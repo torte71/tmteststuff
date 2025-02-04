@@ -23,6 +23,13 @@ nav_order: 1
 
 ## Klipperized Sovol SV06+/SV07+ (mostly)
 
+### Klipper Shutdown
+  * Scripts to safely shutdown.md klipper and power off using HS110 wifi.md power plug
+    * [Windows version](shutdown.html)
+    * [Linux version](shutdown_linux.html)
+
+## Sovol KlipperScreen (Makerbase MKS KLIPAD50)
+
 ### Hardware
   * [Hardware](hardware.html) description of the MKS Klipad50
   * Replaced [WiFi antenna](wifi.html)
@@ -30,13 +37,6 @@ nav_order: 1
 ### [Firmware](firmware.html)
   * [Where to download](firmware.html#where-to-download)
   * [SD-card not accepted](firmware.html#sd-card-not-accepted)
-
-### Klipper Shutdown
-  * Scripts to safely shutdown.md klipper and power off using HS110 wifi.md power plug
-    * [Windows version](shutdown.html)
-    * [Linux version](shutdown_linux.html)
-
-## Sovol KlipperScreen (Makerbase MKS KLIPAD50)
 
 ### [Modifications by Sovol](sovol_mods.html#modifications_by_sovol)
   * [Files in /root](sovol_mods.html#files-in-root)
@@ -65,7 +65,7 @@ nav_order: 1
   * [Logging, etc.](configuring.html#logging-etc)
     * [Timezone updates spamming syslog](configuring.html#timezone-updates-spamming-syslog)
   * [Extending storage space for gcode files](gcode_storage.html#expand-g-code-storage-space)
-  * [Beeper](beeper.html) script for Klipper macros
+  * [Beeper](beeper.html) macro (for use inKlipper)
   * [Screen rotation](screen.html) for KlipperScreen/Xorg
 
 ### Boot loops / Black screen ("unbricking")
