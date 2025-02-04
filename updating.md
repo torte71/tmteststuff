@@ -27,7 +27,7 @@ parent: Original firmware (by Sovol)
     - All standard kernels are incompatible:
       - Screen stays black
       - WiFi is not working
-      - "/dev/spidev*" is not created (touchscreen and accel-sensors require spidev)
+      - "/dev/spidev*" is not created (ADXL543 acceleration sensor requires spidev)
   - **Fix:**
     - **Revert to old kernel**  
       See [Factory reset using Sovol’s armbian-update.deb](bootloop.html#factory-reset-using-sovols-armbian-updatedeb)
