@@ -1,3 +1,10 @@
+---
+title: Rebuilding on Armbian-mainline v25.2 (MKS-KLIPAD50)
+layout: page
+parent: Custom firmware archive
+//nav_order: 18
+has_toc: false
+---
 # Build instructions for building on Armbian-mainline MKS-Klipad50 will follow soon
 
 Please be patient or use the previous guide:
