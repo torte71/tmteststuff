@@ -11,6 +11,7 @@ has_toc: false
 - TOC
 {:toc}
 ----
+
 {: .warning }
 > There is an upcoming Armbian release planned for February 20th.
 >
@@ -38,6 +39,7 @@ You have the choice between the minimal/IOT community images and my server image
 - WiFi setup directly after boot is not working
 - [Download](https://www.armbian.com/mks-klipad50/)
 - [Archive](https://github.com/armbian/community/releases)
+
 {: .note }
 > Do **not** use images with "desktop" in their filename or description!\
 > **Use only** those named "minimal" or "Minimal/IOT"!\
