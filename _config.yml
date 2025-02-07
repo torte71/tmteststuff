@@ -47,8 +47,6 @@ defaults:
       path: ""
     values:
       image: /files/mks-klipad50-1536x864.png
-        height: 200
-        width: 112
 
 aux_links:
   GitHub: https://github.com/torte71/tmteststuff
