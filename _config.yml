@@ -25,8 +25,8 @@ callouts:
     title: Warning
     color: red
 
-plugins:
-  - jekyll-seo-tag
+#plugins:
+#  - jekyll-seo-tag
 #  - jekyll-relative-links
 
 compress_html:
@@ -37,10 +37,16 @@ url: https://torte71.github.io
 baseurl: "/tmteststuff"
 repository: torte71/tmteststuff
 
-image:
-  path: /tmteststuff/files/mks-klipad50-1536x864.png
-  height: 200
-  width: 112
+#image:
+#  path: /tmteststuff/files/mks-klipad50-1536x864.png
+#  height: 200
+#  width: 112
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /tmteststuff/files/mks-klipad50-1536x864.png
 
 aux_links:
   GitHub: https://github.com/torte71/tmteststuff
