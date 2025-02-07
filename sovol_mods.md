@@ -99,7 +99,7 @@ Binary file /root/hid-flash matches
 /var/lib/dpkg/info/makerbase-client.md5sums:ef3573cd08e43b74bbd22ab2dfe68f3b  root/hid-flash
 /var/lib/dpkg/info/makerbase-client.list:/root/hid-flash
 ```
-<!-- </details> -->
+</details> <!-- why is this visible ? -->
 
   * uart
     * **unknown binary, source code missing**
