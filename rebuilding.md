@@ -105,7 +105,7 @@ The next steps are slightly different, depending if you use a) an USB-Ethernet a
   - Continue at [Preparing Klipper setup](#preparing-klipper-setup)
 
 The next steps are **only required for the community image** (scroll down otherwise):
-<details>
+<details markdown="block">
   <summary>WiFi with a community image</summary>
 - c) WiFi with a community image:
   - Answer "y" to "connect via wireless?" (or just press ENTER)  
