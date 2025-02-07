@@ -65,7 +65,7 @@ Thanks to Vasyl Gontar for his additions/corrections to this list.
   * hid-flash
     * **unknown binary, source code missing**
     * probably precompiled `klipper/lib/hidflash`
-    * click to see <details markdown="block"><summary>references</summary>
+    * <details markdown="block"><summary>references</summary>
 ```
 /home/mks/ff-hid-flash.txt:Binary file /home/mks/_root/hid-flash matches
 /home/mks/klipper/src/stm32/Makefile:lib/hidflash/hid-flash:
