@@ -145,11 +145,11 @@ The next steps are **only required for the community image** (scroll down otherw
 - Rename your device from "mksklipad50" to "mkspi" (as it was in prior images):
   - Execute `nano /etc/hostname`
   - Replace "mksklipad50" with "mkspi"
-  - Press \<CTRL-X\>, "y", \<ENTER\> to save and confirm the filename.\
+  - Press \<CTRL-X\>, "Y", \<ENTER\> to save and confirm the filename.\
     (This is also possible using armbian-config -\> "Localisation" -\> "Change System Hostname")
 
 - Install "git" (required for downloading KIAUH):  
-  Execute `apt install git`
+  - Execute `apt install git`
 
 ### Setting up Klipper
 
