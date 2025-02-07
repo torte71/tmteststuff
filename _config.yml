@@ -37,7 +37,7 @@ baseurl: "/tmteststuff"
 repository: torte71/tmteststuff
 
 image:
-  path: /files/mks-klipad50-1536x864.png
+  path: /tmteststuff/files/mks-klipad50-1536x864.png
   height: 200
   width: 112
 
