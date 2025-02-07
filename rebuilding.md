@@ -105,8 +105,6 @@ The next steps are slightly different, depending if you use a) an USB-Ethernet a
   - Continue at [Preparing Klipper setup](#preparing-klipper-setup)
 
 The next steps are **only required for the community image** (scroll down otherwise):
-<details markdown="block">
-  <summary>WiFi with a community image</summary>
 - c) WiFi with a community image:
   - Answer "y" to "connect via wireless?" (or just press ENTER)  
     (Sadly, this just continues without asking to connect it to an access point, so no internet yet)
@@ -138,7 +136,6 @@ The next steps are **only required for the community image** (scroll down otherw
       - Edit this file using `nano /etc/netplan/armbian.yaml`
       - Make sure it reads "renderer: NetworkManager" and not "renderer: networkd"  
 	(otherwise change that line in the editor and save it).
-</details>
 
 ### Preparing Klipper setup
 - If you didn't generate locales, then you may want to set your timezone:
