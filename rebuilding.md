@@ -17,10 +17,10 @@ has_toc: false
 >
 > Until then the version numbers will change frequently!
 >
-> You may want to wait for the release/versios to settle.
+> You may want to wait for the release/versions to settle.
 
-Since February 2025, the MKS-Klipad50 board is natively supported by Armbian.
-(The Makerbase kernel patches ported by Maxim Medvedev have been integrated into Armbian in December 2024).
+Since February 2025, the MKS-Klipad50 board is natively supported by Armbian.\
+(The Makerbase kernel patches ported by Maxim Medvedev have been integrated into Armbian in December 2024).\
 This means, that it is now possible to update the kernel like any other package, no more hazzles with replacing DTB files, etc.
 
 ## Different image options
@@ -48,9 +48,10 @@ You have the choice between the minimal/IOT community images and my server image
 ## Steps to create a "sovolish" Klipper installation based on these images:
 
 ### Downloading and flashing the image
-- Choose an image file from the above links. I recommend my server images, as they are easier to set up.  
+- Choose an image file from the above links.\
+  I recommend my server images, as they are easier to set up.  
   - Images used for testing:
-    - My server image for "current" kernel: [v0.1.0-25.05.0-current](https://github.com/torte71/mksklipad50-armbian-images/releases/download/0.0.2/Armbian-unofficial_25.02.0-trunk_Mksklipad50_bookworm_current_6.12.12.img.xz)
+    - My server image for "current" kernel: (link will follow soon) <!-- [v0.1.0-25.05.0-current](https://github.com/torte71/mksklipad50-armbian-images/releases/download/0.0.2/Armbian-unofficial_25.02.0-trunk_Mksklipad50_bookworm_current_6.12.12.img.xz) -->
     - Community image (for the thrills): [25.5.0-trunk.4](https://github.com/armbian/community/releases/download/25.5.0-trunk.4/Armbian_community_25.5.0-trunk.4_Mksklipad50_bookworm_current_6.12.12_minimal.img.xz)
 - Extract the image (e.g. using [7zip](https://www.7-zip.org/)).
 - Write the extracted .img file to the eMMC card (e.g. using [Balena Etcher](https://www.balena.io/etcher/)).
@@ -270,10 +271,10 @@ dpkg -i makerbase-beep-service.deb
 ```
       * Fix access rights to gpio82:
         * Execute `nano /etc/rc.local`
-        * Add following lines (before the `exit 0` line)
+        * Add following lines (before the `exit 0` line, but after the "#" comment lines)
 ```
 if [ ! -d "/sys/class/gpio/gpioi82" ]; then
-  echo 82 > /sys/class/gpio/export
+	echo 82 > /sys/class/gpio/export
 fi
 chgrp mks /sys/class/gpio/gpio82/value
 chmod g+w /sys/class/gpio/gpio82/value
