@@ -28,7 +28,14 @@ callouts:
 #plugins:
 #  - jekyll-relative-links
 
-url: https://torte71.github.io/tmteststuff
+compress_html:
+  ignore:
+    envs: all
+
+#url: https://torte71.github.io/tmteststuff
+url: https://torte71.github.io
+baseurl: "/tmteststuff"
+repository: torte71/tmteststuff
 
 aux_links:
   GitHub: https://github.com/torte71/tmteststuff
