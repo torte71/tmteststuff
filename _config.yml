@@ -25,7 +25,8 @@ callouts:
     title: Warning
     color: red
 
-#plugins:
+plugins:
+  - jekyll-seo-tag
 #  - jekyll-relative-links
 
 compress_html:
