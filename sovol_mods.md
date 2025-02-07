@@ -100,7 +100,6 @@ Binary file /root/hid-flash matches
 /var/lib/dpkg/info/makerbase-client.list:/root/hid-flash
 ```
 </details>
-<!-- why is this visible ? -->
 
   * uart
     * **unknown binary, source code missing**
