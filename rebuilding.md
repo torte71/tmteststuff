@@ -148,6 +148,7 @@ The next steps are **only required for the community image** (scroll down otherw
   - Press \<CTRL-X\>, "Y", \<ENTER\> to save and confirm the filename.\
     (This is also possible using armbian-config -\> "Localisation" -\> "Change System Hostname")
 
+TODO: UBUNTU: "git" already installed
 - Install "git" (required for downloading KIAUH):  
   - Execute `apt install git`
 
@@ -189,6 +190,7 @@ cd /kiauh
 	- B (Back)
       - Q (Quit)
 
+TODO: UBUNTU: Driver "fbdev" already in "02-driver.conf"
 - Adjust screen rotation  
   - Execute `sudo nano /etc/X11/xorg.conf.d/01-armbian-defaults.conf`
   - Copy this text:
