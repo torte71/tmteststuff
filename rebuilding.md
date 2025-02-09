@@ -90,50 +90,28 @@ Download locations:
   - Enter real name (e.g. "Mks")
 
 ### Network setup
-The next steps are slightly different, depending if you use a) an USB-Ethernet adapter, b) WiFi with server image or c) WiFi with minimal image
-- a) USB-Ethernet adapter:
-  - Will continue right at "Locale setup"
-- b) and c) Wifi with server or minimal image:
+- If you use an USB-Ethernet adapter, skip to "Locale setup"
+
+- If you connect via WiFi:
   - Answer "y" to "connect via wireless?" (or just press ENTER)
   - Select your access point in the dialog
   - Enter your WiFi password
-- Locale setup (common for a) b) and c))
+
+- Locale setup
   - When asked "Set user language based on your location?":
     - Choose what you want. I prefer "no", because untranslated error-messages give better online search results
   - When asked for generating locales:
     - If you use a user language other than english, you may want to select a different encoding from the list
     - Otherwise just skip locale generation (choose the highest/last number on that list)
-- a) and b)
-  - Continue at [Preparing Klipper setup](#preparing-klipper-setup)
 
-The next steps are **only required for the minimal image** (scroll down otherwise):
-- c) WiFi with minimal image:
+The next steps are **only required for the minimal image**
+- Switch to NetworkManager
   - Install NetworkManager:  
     - Execute `apt update && apt -y install network-manager`
   - Disable networkd:
     - Execute `systemctl disable systemd-networkd.service`
-  - Remove old network settings:
-    - Execute `rm /etc/netplan/*.yaml`
-  - Set up WiFi again (this time it uses NetworkManager):
-    - Execute `armbian-config`
-    - Select "Network"
-    - Select "Basic Network Setup"
-    - Select the wifi adapter "wlan0 unassigned wifi"
-    - Select \<Configure\>
-    - Select your access point from the list
-    - Enter your wifi password
-    - Select "dhcp Auto IP assigning"
-    - Press \<ENTER\> in "Spoof MAC address?" dialog
-    - Use \<Back\> and \<Exit\> to quit armbian-config
-  - Troubleshooting network:
-    - Check this, if the screen has a long boot delay waiting for "systemd-networkd-wait-online.service".
-    - List the contents of "/etc/netplan/":  
-      Execute `ls -l /etc/netplan/`
-      - There should be no other file but "armbian.yaml".
-      - Edit this file using `nano /etc/netplan/armbian.yaml`
-      - Make sure it reads "renderer: NetworkManager" and not "renderer: networkd"  
-	(otherwise change that line in the editor and save it).
-    - Make sure you did the "Disable networkd" step from above.
+  - Update neplan config
+    - Execute `sed -i "/renderer:/ s/networkd/NetworkManager/" /etc/netplan/*.yaml`
 
 ### Preparing Klipper setup
 - If you didn't generate locales, then you may want to set your timezone:
