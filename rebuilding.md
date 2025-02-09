@@ -133,6 +133,7 @@ The next steps are **only required for the minimal image** (scroll down otherwis
       - Edit this file using `nano /etc/netplan/armbian.yaml`
       - Make sure it reads "renderer: NetworkManager" and not "renderer: networkd"  
 	(otherwise change that line in the editor and save it).
+    - Make sure you did the "Disable networkd" step from above.
 
 ### Preparing Klipper setup
 - If you didn't generate locales, then you may want to set your timezone:
@@ -187,7 +188,6 @@ cd /kiauh
 	- B (Back)
       - Q (Quit)
 
-TODO: UBUNTU: Driver "fbdev" already in "02-driver.conf"
 - Adjust screen rotation  
   - Execute `sudo nano /etc/X11/xorg.conf.d/01-armbian-defaults.conf`
   - Copy this text:
@@ -338,4 +338,22 @@ as Sovol's version of the SV06+ config is still broken.
 For the ready-to-use images I use the standard (non-plus) SV06 config, as it has the smallest bed defined,
 so the printhead/bed will not accidentally ram into the endstops on the non-plus models.
 
+### Copying Mainsail / Fluidd config
+Mainsail and Fluidd store their settings in a database: `~/printer_data/database/moonraker-sql.db`.\
+(These also contain metadata for the existing gcode files, like thumbnails, print settings, etc.)
+
+In most cases it is possible to copy your old database, but you should stop the moonraker service before doing this:
+- Stop moonraker service: `sudo service moonraker stop`
+- Ensure moonraker really has stopped: `sudo service moonraker stop`
+  - Make sure the output reads "Active: inactive (dead)" and **not** "Active: active (running)"
+- Make a backup of the "database" directory: `cp -a ~/printer_data/database ~/printer_data/database.bak`
+- Copy your old "moonraker-sql.db" (and possibly other files existing in your old "database" directory) into the "database" directory
+- Restart moonraker: `sudo service moonraker stop`
+- If that does not work
+  - Try rebooting the device
+  - Revert to the old database if you encounter problems
+    - Stop moonraker service first (as shown above)
+    - Remove the "database" directory: `rm -rf ~/printer_data/database`
+    - Rename the backed up "database.bak" back to "database": `mv ~/printer_data/database.bak ~/printer_data/database`
+    - Reboot the device
 
