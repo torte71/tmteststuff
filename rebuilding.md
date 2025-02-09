@@ -19,40 +19,40 @@ has_toc: false
 >
 > You may want to wait for the release/versions to settle.
 
-Since February 2025, the MKS-Klipad50 board is natively supported by Armbian.\
-(The Makerbase kernel patches ported by Maxim Medvedev have been integrated into Armbian in December 2024).\
+Since February 2025, the MKS-Klipad50 board is natively supported by Armbian.
+
+The required Makerbase kernel patches ported by Maxim Medvedev have been integrated into mainline Armbian in December 2024.
+
 This means, that it is now possible to update the kernel like any other package, no more hazzles with replacing DTB files, etc.
 
 ## Different image options
 
-You have the choice between the minimal/IOT community images and my server images:
+You have the choice between Debian bookworm minimal/IOT images and Ubuntu noble server images:
 
-### Server image (recommended)
-- Comes with more preinstalled packages (e.g. NetworkManager, ...
-- Allows WiFi setup right after boot (if you replaced the DTB file beforehand)
-- Kernel options: "current" (recommended) and "edge" (for experimenting)
-- [Download](https://github.com/torte71/mksklipad50-armbian-images/releases)
+### Ubuntu noble Server image (recommended)
+- Comes with more preinstalled packages (e.g. working NetworkManager setup)
 
-### Community image
+### Debian bookwom Minimal/IOT image
 - Comes with just a minimal set of preinstalled packages
 - Requires additional steps to get NetworkManager play together with networkd
-- WiFi setup directly after boot is not working
-- [Download](https://www.armbian.com/mks-klipad50/)
-- [Archive](https://github.com/armbian/community/releases)
+
+Download locations:
+- Latest [images](https://www.armbian.com/mks-klipad50/)
+- Image [archive](https://github.com/armbian/community/releases)
 
 {: .note }
-> Do **not** use images with "desktop" in their filename or description!\
-> **Use only** those named "minimal" or "Minimal/IOT"!\
-> **Use only** images with "Mksklipad50" in their name!
+> When using images from the archive:
+> - **Use only** images with "Mksklipad50" in their name.
+> - Do **not** use images with "desktop" in their filename or description (unless you have extremely small fingers).
 
 ## Steps to create a "sovolish" Klipper installation based on these images:
 
 ### Downloading and flashing the image
 - Choose an image file from the above links.\
-  I recommend my server images, as they are easier to set up.  
+  I recommend the server images, as they are easier to set up.  
   - Images used for testing:
-    - My server image for "current" kernel: (link will follow soon) <!-- [v0.1.0-25.05.0-current](https://github.com/torte71/mksklipad50-armbian-images/releases/download/0.0.2/Armbian-unofficial_25.02.0-trunk_Mksklipad50_bookworm_current_6.12.12.img.xz) -->
-    - Community image (for the thrills): [25.5.0-trunk.4](https://github.com/armbian/community/releases/download/25.5.0-trunk.4/Armbian_community_25.5.0-trunk.4_Mksklipad50_bookworm_current_6.12.12_minimal.img.xz)
+    - Ubuntu noble server image: (link will follow soon) <!-- [v0.1.0-25.05.0-current](https://github.com/torte71/mksklipad50-armbian-images/releases/download/0.0.2/Armbian-unofficial_25.02.0-trunk_Mksklipad50_bookworm_current_6.12.12.img.xz) -->
+    - Debian bookworm minimal image: <https://dl.armbian.com/mksklipad50/Bookworm_current_minimal>
 - Extract the image (e.g. using [7zip](https://www.7-zip.org/)).
 - Write the extracted .img file to the eMMC card (e.g. using [Balena Etcher](https://www.balena.io/etcher/)).
 
@@ -89,26 +89,31 @@ You have the choice between the minimal/IOT community images and my server image
   - Enter real name (e.g. "Mks")
 
 ### Network setup
-The next steps are slightly different, depending if you use a) an USB-Ethernet adapter, b) WiFi with server image or c) WiFi with a community image
+The next steps are slightly different, depending if you use a) an USB-Ethernet adapter, b) WiFi with server image or c) WiFi with minimal image
 - a) USB-Ethernet adapter:
-  - Will continue right at "Set user language based on your location?"
-- b) Wifi with server image:
+  - Will continue right at "Locale setup"
+- b) and c) Wifi with server or minimal image:
   - Answer "y" to "connect via wireless?" (or just press ENTER)
   - Select your access point in the dialog
   - Enter your WiFi password
-- a) and b)
+- Locale setup (common for a) b) and c))
   - When asked "Set user language based on your location?":
     - Choose what you want. I prefer "no", because untranslated error-messages give better online search results
   - When asked for generating locales:
     - If you use a user language other than english, you may want to select a different encoding from the list
-    - Otherwise just use "330" to skip locale generation
+    - Otherwise just skip locale generation (choose the highest/last number on that list)
+- a) and b)
   - Continue at [Preparing Klipper setup](#preparing-klipper-setup)
 
-The next steps are **only required for the community image** (scroll down otherwise):
-- c) WiFi with a community image:
-  - Answer "y" to "connect via wireless?" (or just press ENTER)  
-    (Sadly, this just continues without asking to connect it to an access point, so no internet yet)
-  - Set up Wifi using "armbian-config"
+The next steps are **only required for the minimal image** (scroll down otherwise):
+- c) WiFi with minimal image:
+  - Install NetworkManager:  
+    - Execute `apt update && apt -y install network-manager`
+  - Disable networkd:
+    - Execute `systemctl disable systemd-networkd.service`
+  - Remove old network settings:
+    - Execute `rm /etc/netplan/*.yaml`
+  - Set up WiFi again (this time it uses NetworkManager):
     - Execute `armbian-config`
     - Select "Network"
     - Select "Basic Network Setup"
@@ -119,15 +124,6 @@ The next steps are **only required for the community image** (scroll down otherw
     - Select "dhcp Auto IP assigning"
     - Press \<ENTER\> in "Spoof MAC address?" dialog
     - Use \<Back\> and \<Exit\> to quit armbian-config
-  - Install NetworkManager:  
-    - Execute `apt update && apt -y install network-manager`
-  - Disable networkd:
-    - Execute `systemctl disable systemd-networkd.service`
-  - Remove old network settings:
-    - Execute `rm /etc/netplan/*.yaml`
-  - Set up WiFi again (this time it uses NetworkManager):
-    - Execute `armbian-config`
-    - Repeat all steps from first WiFi setup and quit armbian-config afterwards.
   - Troubleshooting network:
     - Check this, if the screen has a long boot delay waiting for "systemd-networkd-wait-online.service".
     - List the contents of "/etc/netplan/":  
@@ -148,9 +144,9 @@ The next steps are **only required for the community image** (scroll down otherw
   - Press \<CTRL-X\>, "Y", \<ENTER\> to save and confirm the filename.\
     (This is also possible using armbian-config -\> "Localisation" -\> "Change System Hostname")
 
-TODO: UBUNTU: "git" already installed
 - Install "git" (required for downloading KIAUH):  
   - Execute `apt install git`
+  - The Ubuntu Server image already has "git" installed, so you can skip this step
 
 ### Setting up Klipper
 
@@ -213,6 +209,10 @@ EndSection
     - Press ENTER to confirm filename
     - Restart KlipperScreen:
       - Execute `sudo service KlipperScreen restart`
+  - Note for **Ubuntu Server** image:
+    - Opposed to Debian based images, the Ubuntu image comes with an additional XOrg config file `/etc/X11/xorg.conf.d/02-driver.conf`.\
+      It does not interfere with the above config, but it is cleaner to remove it to avoid duplicate configurations:\
+      `sudo rm /etc/X11/xorg.conf.d/02-driver.conf`
 
 - Set up numpy (required for input shaping)
   - Execute

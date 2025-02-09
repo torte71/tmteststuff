@@ -14,11 +14,24 @@ nav_order: 1
 
 Support for the MKS-Klipad50 board is now integrated in mainline Armbian.
 
-That means, that the kernel and the whole system can now simply be updated without any hazzles from overwritten devicetree files.
+That means, that the kernel (and related stuff) can now simply be updated just like any other package, without any hazzles from overwritten devicetree files.
 
 ## Download locations
-- Custom [Images](https://github.com/torte71/armbian-mksklipad50) on GitHub
-- Community Images on Armbian (coming soon)
+<!-- - Custom [Images](https://github.com/torte71/armbian-mksklipad50) on GitHub -->
+- Latest [images](https://www.armbian.com/mks-klipad50/) on Armbian
+- Community [releases](https://github.com/armbian/community/releases/) on Armbian
+
+{ .note }
+> I recommend using the Ubuntu Noble images (they will appear soon on the servers), as they already come with a working NetworkManager setup, whereas the Debian/Minimal require some additional steps changing from networkd to NetworkManager).
+
+## Why Ubuntu?
+That's for maintainability reasons:
+- Armbian automatic builds do not offer all possible combinations of distributions (Debian, Ubuntu) and package selections (Minimal, Server, Desktop), they don't have endless resources.
+- Debian/Server is a combination currently not offered for Armbian automatic builds.
+- Providing my own Debian/Server builds would require constant work keeping them up to date.
+- The Ubuntu images contain just a small subset of the original Ubuntu setup:
+  - All proprietary Ubuntu stuff has been removed in the Armbian version.
+  - Basically it is a Debian image, just with some more recent packages.
 
 ## What works well
   - Summarized: Everything that worked with the original image.
