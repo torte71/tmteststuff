@@ -31,6 +31,7 @@ You have the choice between Debian bookworm minimal/IOT images and Ubuntu noble 
 
 ### Ubuntu noble Server image (recommended)
 - Comes with more preinstalled packages (e.g. working NetworkManager setup)
+- See [Why Ubuntu?](armbian_images.html#why-ubuntu)
 
 ### Debian bookwom Minimal/IOT image
 - Comes with just a minimal set of preinstalled packages
