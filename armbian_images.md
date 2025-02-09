@@ -21,8 +21,8 @@ That means, that the kernel (and related stuff) can now simply be updated just l
 - Latest [images](https://www.armbian.com/mks-klipad50/) on Armbian
 - Community [releases](https://github.com/armbian/community/releases/) on Armbian
 
-{ .note }
-> I recommend using the Ubuntu Noble images (they will appear soon on the servers), as they already come with a working NetworkManager setup, whereas the Debian/Minimal require some additional steps changing from networkd to NetworkManager).
+{: .note }
+> I recommend using the Ubuntu Noble images (they will appear soon on the servers), as they already come with a working NetworkManager setup, whereas the Debian/Minimal require some additional steps changing from networkd to NetworkManager.
 
 ## Why Ubuntu?
 That's for maintainability reasons:
