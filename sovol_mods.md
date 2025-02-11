@@ -15,7 +15,7 @@ has_toc: false
 
 Please note that this is just work-in-progress.  
 The changes listed here may not be complete and are just quickly tested.  
-Thanks to Vasyl Gontar for his additions/corrections to this list.
+Thanks to Vasyl Gontar and nubecoder for their additions/corrections to this list.
 
   * KlipperScreen
     * incomplete ".git" directory (throws errors on KIAUH update page)
