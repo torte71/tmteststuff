@@ -1,6 +1,7 @@
 ---
 title: Klipad50 DTB fix
 layout: page
+nav_order: 2
 parent: Rebuilding on Armbian-mainline v25.2 (MKS-PI)
 ---
 # Klipad50 DTB fix

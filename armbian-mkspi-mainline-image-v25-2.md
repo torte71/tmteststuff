@@ -1,6 +1,7 @@
 ---
 title: Sovolized Armbian-mainline Klipper Image v25.2 (MKS-PI)
 layout: page
+nav_order: 1
 parent: Rebuilding on Armbian-mainline v25.2 (MKS-PI)
 ---
 # Sovolized Armbian-mainline Klipper Image v25.2 (MKS-PI)
