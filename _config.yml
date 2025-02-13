@@ -43,6 +43,10 @@ defaults:
       path: ""
     values:
       image: /files/mks-klipad50-1536x864.png
+  - scope:
+      path: "google*.html"
+    values:
+      sitemap: false
 
 aux_links:
   GitHub: https://github.com/torte71/tmteststuff
