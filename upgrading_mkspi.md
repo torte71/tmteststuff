@@ -13,13 +13,19 @@ has_toc: false
 {:toc}
 ----
 
-## Unsupported
+## Unsupported images
 - Original Sovol/Makerbase image
+  - Upgrading from armbian-buster based images is **not** supported.
+  - You need to start from a bookworm based image.
 
-## Supported
-- Images based on MKS-PI
+## Supported images
+- Images based on MKS-PI, e.g.
+  - from <https://github.com/redrathnure/armbian-mkspi>
+  - complete klipper image ["sovolized-v25.2.0.05"](https://github.com/torte71/mksklipad50-klipper-images/releases/tag/v25.2.0.05)
+  - complete klipper image ["sovolized-03-numpy"](https://github.com/torte71/mksklipad50-klipper-images/releases/tag/v24.2.0.03)
 
 - Images based on pre-release MKS-KLIPAD50
+  - from <https://github.com/torte71/armbian-mksklipad50/releases>
 
 ### Images based on MKS-PI
 
@@ -79,7 +85,7 @@ cd
 >
 > And when you are done, execute `exit` to switch back to the default user (or do a reboot).
 
-{: .note }
+{: .important }
 > This only applies to images downloaded from
 >
 > https://github.com/torte71/armbian-mksklipad50/releases
