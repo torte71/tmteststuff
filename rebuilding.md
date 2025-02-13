@@ -2,6 +2,7 @@
 title: Rebuilding on Armbian-mainline v25.5 (MKS-KLIPAD50)
 layout: page
 parent: Custom firmware options
+nav_order: 3
 has_toc: false
 ---
 # Rebuilding on Armbian-mainline v25.5 (MKS-KLIPAD50)
