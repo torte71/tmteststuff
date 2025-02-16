@@ -66,7 +66,7 @@ The shell uses absolute lane numbers.
 
 - Example: `gpio82`
 
-### Devicetree syntax
+### Devicetree naming scheme
 Devicetree files use A0 to D7 relative lane names (prepended with "RK_P")
 
 - Example: `&gpio2 RK_PC2`
@@ -75,11 +75,12 @@ Devicetree files use A0 to D7 relative lane names (prepended with "RK_P")
 gpios = <&gpio2 RK_PC2 GPIO_ACTIVE_HIGH>;
 ```
 
-### Klipper syntax
+### Klipper naming scheme
 Klipper uses relative lane numbers. "rpi" refers to the mcu.
 
 - Example: `rpi:gpiochip2/gpio18`
 - Example (long):
+
 ```
 [mcu rpi]
 serial: /tmp/klipper_host_mcu
