@@ -52,6 +52,8 @@ verbose: False
 
 ### Shell script
   * Create `/home/mks/printer_data/config/macros/macro-beep.sh`:
+
+{% raw  %}
 ```
 #!/bin/bash
 # usage: beep.sh [BEEPCOUNT] [BEEPDURATION] [PAUSEDURATION]
@@ -81,6 +83,7 @@ for (( i=0; i<BEEPCOUNT; i++ )); do
     sleep $PAUSEDURATION
 done
 ```
+{% endraw  %}
   * Make the shell script executable:
     * Execute `chmod +x /home/mks/printer_data/config/macros/macro-beep.sh`
 
