@@ -15,6 +15,14 @@ nav_order: 2
 ## Beeper macro setup
 Based on solution by "Bastian" on <https://forum.sovol3d.com/t/use-beeper-from-mks-sbc-which-pin/3606/5>
 
+There are two slightly different approaches:
+  * a) Klipper directly accesses the GPIO
+  * b) GPIO is handled by shell script, which is called from Klipper via gcode-shell-command
+  
+Option a) does not depend on "gcode-shell-command", but it does not work together with "makerbase-beep-service", so touching the screen will not beep any longer. (The makerbase service requires the GPIO pin to be exported, but Klipper requires it to be unexported.)
+
+In order to not break the touchscreen beeps, I prefer option b) using the external shell script.
+
 ### System setup (set access rights, export gpio pin)
   * Requires udev rule to change rights for gpio access
     * Based on solution by "MikeDK" on <https://forums.raspberrypi.com/viewtopic.php?t=9667>
