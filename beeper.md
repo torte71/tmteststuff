@@ -13,7 +13,7 @@ nav_order: 2
 ----
 
 ## Beeper macro setup
-  * Based on solution by "Bastian" on <https://forum.sovol3d.com/t/use-beeper-from-mks-sbc-which-pin/3606/5>
+Based on solution by "Bastian" on <https://forum.sovol3d.com/t/use-beeper-from-mks-sbc-which-pin/3606/5>
 
 ### System setup (set access rights, export gpio pin)
   * Requires udev rule to change rights for gpio access
@@ -30,7 +30,7 @@ echo 82 > /sys/class/gpio/export
 echo out > /sys/class/gpio/gpio82/direction
 ```
 
-### Klipper setup (macro "BEEP")
+### Klipper setup (add macro "BEEP")
   * Requires [gcode-shell-command](https://github.com/dw-0/kiauh/blob/master/docs/gcode_shell_command.md)
   * Add BEEP macro to `/home/mks/printer_data/config/printer.cfg`:
 
@@ -50,7 +50,7 @@ verbose: False
 ```
 {% endraw  %}
 
-### Shell script
+### Add shell script ("macro-beep.sh")
   * Create `/home/mks/printer_data/config/macros/macro-beep.sh`:
 
 {% raw  %}
