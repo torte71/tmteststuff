@@ -12,10 +12,10 @@ nav_order: 2
 {:toc}
 ----
 
-  * Beeper script:
-    * Based on solution by "Bastian" on <https://forum.sovol3d.com>
-    * <https://forum.sovol3d.com/t/use-beeper-from-mks-sbc-which-pin/3606/5>
+## Beeper macro setup
+  * Based on solution by "Bastian" on <https://forum.sovol3d.com/t/use-beeper-from-mks-sbc-which-pin/3606/5>
 
+### System setup (set access rights, export gpio pin)
   * Requires udev rule to change rights for gpio access
     * Based on solution by "MikeDK" on <https://forums.raspberrypi.com/viewtopic.php?t=9667>
     * Create `/etc/udev/rules.d/90-gpio.rules`:
@@ -23,13 +23,15 @@ nav_order: 2
 SUBSYSTEM=="gpio", KERNEL=="gpiochip*", ACTION=="add", PROGRAM="/bin/sh -c 'chown root:dialout /sys/class/gpio/export /sys/class/gpio/unexport ; chmod 220 /sys/class/gpio/export /sys/class/gpio/unexport'"
 SUBSYSTEM=="gpio", KERNEL=="gpio*", ACTION=="add", PROGRAM="/bin/sh -c 'chown root:dialout /sys%p/active_low /sys%p/direction /sys%p/edge /sys%p/value ; chmod 660 /sys%p/active_low /sys%p/direction /sys%p/edge /sys%p/value'"
 ```
-    * If you are **not** installing [makerbase-beep-service](makerbase-beep-files.html), then you need to set up gpio82 at boot time:
-      * Insert following code to `/etc/rc.local` (after the lines starting with '#', but before the 'exit 0' line):
+    * If you are **not** installing [makerbase-beep-service](makerbase-beep-files.html), then you need to set up gpio82 at boot time.
+      Insert following code to `/etc/rc.local` (after the lines starting with '#', but before the 'exit 0' line):
 ```
 echo 82 > /sys/class/gpio/export
 echo out > /sys/class/gpio/gpio82/direction
 ```
 
+### Klipper setup (macro "BEEP")
+  * Requires [gcode-shell-command](https://github.com/dw-0/kiauh/blob/master/docs/gcode_shell_command.md)
   * Add BEEP macro to `/home/mks/printer_data/config/printer.cfg`:
 
 {% raw  %}
@@ -42,14 +44,14 @@ gcode:
   RUN_SHELL_COMMAND CMD=beep PARAMS='{beep_count} {beep_duration} {pause_duration}'
 
 [gcode_shell_command beep]
-command: bash /home/mks/printer_data/config/macro/macro-beep.sh
+command: bash /home/mks/printer_data/config/macros/macro-beep.sh
 timeout: 10
 verbose: False
 ```
 {% endraw  %}
 
-  * /home/mks/printer_data/config/macros/macro-beep.sh:
-
+### Shell script
+  * Create `/home/mks/printer_data/config/macros/macro-beep.sh`:
 ```
 #!/bin/bash
 # usage: beep.sh [BEEPCOUNT] [BEEPDURATION] [PAUSEDURATION]
@@ -79,6 +81,8 @@ for (( i=0; i<BEEPCOUNT; i++ )); do
     sleep $PAUSEDURATION
 done
 ```
+  * Make the shell script executable:
+    * Execute `chmod +x /home/mks/printer_data/config/macros/macro-beep.sh`
 
 ----
 Back to [start](index.html)
