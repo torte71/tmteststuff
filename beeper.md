@@ -17,17 +17,20 @@ nav_order: 2
     * <https://forum.sovol3d.com/t/use-beeper-from-mks-sbc-which-pin/3606/5>
 
   * Requires udev rule to change rights for gpio access
-    * Based on solution by "MikeDK" on <https://forums.raspberrypi.com>
-    * <https://forums.raspberrypi.com/viewtopic.php?t=9667>
-
-  * /etc/udev/rules.d/90-gpio.rules
-
+    * Based on solution by "MikeDK" on <https://forums.raspberrypi.com/viewtopic.php?t=9667>
+    * Create `/etc/udev/rules.d/90-gpio.rules`:
 ```
 SUBSYSTEM=="gpio", KERNEL=="gpiochip*", ACTION=="add", PROGRAM="/bin/sh -c 'chown root:dialout /sys/class/gpio/export /sys/class/gpio/unexport ; chmod 220 /sys/class/gpio/export /sys/class/gpio/unexport'"
 SUBSYSTEM=="gpio", KERNEL=="gpio*", ACTION=="add", PROGRAM="/bin/sh -c 'chown root:dialout /sys%p/active_low /sys%p/direction /sys%p/edge /sys%p/value ; chmod 660 /sys%p/active_low /sys%p/direction /sys%p/edge /sys%p/value'"
 ```
+    * If you are **not** installing [makerbase-beep-service](makerbase-beep-files.html), then you need to set up gpio82 at boot time:
+      * Insert following code to `/etc/rc.local` (after the lines starting with '#', but before the 'exit 0' line):
+```
+echo 82 > /sys/class/gpio/export
+echo out > /sys/class/gpio/gpio82/direction
+```
 
-  * /home/mks/printer_data/config/printer.cfg:
+  * Add BEEP macro to `/home/mks/printer_data/config/printer.cfg`:
 
 {% raw  %}
 ```

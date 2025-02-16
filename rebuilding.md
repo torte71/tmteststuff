@@ -251,17 +251,6 @@ cd
 wget https://torte71.github.io/tmteststuff/files/makerbase-beep-service.deb
 dpkg -i makerbase-beep-service.deb
 ```
-      * Fix access rights to gpio82:
-        * Execute `nano /etc/rc.local`
-        * Add following lines (before the `exit 0` line, but after the "#" comment lines)
-```
-if [ ! -d "/sys/class/gpio/gpioi82" ]; then
-	echo 82 > /sys/class/gpio/export
-fi
-chgrp mks /sys/class/gpio/gpio82/value
-chmod g+w /sys/class/gpio/gpio82/value
-```
-        * Save and exit the editor
     * To uninstall:
       * Execute `sudo dpkg -r makerbase-beep-service`
 
