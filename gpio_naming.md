@@ -37,7 +37,7 @@ lane  6 = A6  |  lane 14 = B6  |  lane 22 = C6  |  lane 20 = D6
 lane  7 = A7  |  lane 15 = B7  |  lane 23 = C7  |  lane 31 = D7
 ```
 
-## Relative lane numbers vs. absolute lane numbers
+## Relative vs. absolute lane numbers
 
 To calculate the relative lane number, divide the absolute lane number by 32. The remainder is the relative lane number.
 
@@ -61,11 +61,15 @@ Relative:  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
 - the relative lane number is 18
 - the symbolic name is "gpio2 C2"
 
-### Shell syntax
+### Shell naming scheme
 `gpio82`
+
+The shell uses absolute lane numbers.
 
 ### Devicetree syntax
 `&gpio2 RK_PC2`
+
+Devicetree files use A0 to D7 relative lane names (prepended with "RK_P")
   - Example
 ```
 gpios = <&gpio2 RK_PC2 GPIO_ACTIVE_HIGH>;
@@ -74,8 +78,12 @@ gpios = <&gpio2 RK_PC2 GPIO_ACTIVE_HIGH>;
 ### Klipper syntax
 `rpi:gpiochip2/gpio18`
 
+Klipper uses relative lane numbers. "rpi" refers to the mcu.
   - Example
-```  
+```
+[mcu rpi]
+serial: /tmp/klipper_host_mcu
+
 [output_pin beeper_pin]
 pin: rpi:gpiochip2/gpio18
 ```
