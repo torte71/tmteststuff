@@ -12,8 +12,10 @@ nav_order: 2
 {:toc}
 ----
 
-## Beeper macro setup
-Based on solution by "Bastian" on <https://forum.sovol3d.com/t/use-beeper-from-mks-sbc-which-pin/3606/5>
+## Description
+The "BEEP" macro allows Klipper to emit beeps, e.g. to signal filament change, cancelled prints and similar.
+
+It is based on the solution by "Bastian" at <https://forum.sovol3d.com/t/use-beeper-from-mks-sbc-which-pin/3606/5>.
 
 There are two slightly different approaches:
   * a) Klipper directly accesses the GPIO
@@ -23,7 +25,7 @@ Option a) does not depend on "gcode-shell-command", but it does not work togethe
 
 In order to not break the touchscreen beeps, I prefer option b) using the external shell script.
 
-### System setup (set access rights, export gpio pin)
+## System setup (set access rights, export gpio pin)
   * Requires udev rule to change rights for gpio access
     * Based on solution by "MikeDK" on <https://forums.raspberrypi.com/viewtopic.php?t=9667>
     * Create `/etc/udev/rules.d/90-gpio.rules`:
@@ -38,7 +40,7 @@ echo 82 > /sys/class/gpio/export
 echo out > /sys/class/gpio/gpio82/direction
 ```
 
-### Klipper setup (add macro "BEEP")
+## Klipper setup (add macro "BEEP")
   * Requires [gcode-shell-command](https://github.com/dw-0/kiauh/blob/master/docs/gcode_shell_command.md)
   * Add BEEP macro to `/home/mks/printer_data/config/printer.cfg`:
 
@@ -58,7 +60,7 @@ verbose: False
 ```
 {% endraw  %}
 
-### Add shell script ("macro-beep.sh")
+## Add shell script ("macro-beep.sh")
   * Create `/home/mks/printer_data/config/macros/macro-beep.sh`:
 
 {% raw  %}
