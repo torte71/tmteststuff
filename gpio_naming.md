@@ -24,7 +24,7 @@ gpio3: lane 96 .. 127
 
 ## GPIO lanes
 
-The 32 lanes of each controller are named `A0` .. `C7`:
+The 32 lanes of each controller are named `A0` .. `D7`:
 
 ```
 lane  0 = A0  |  lane  8 = B0  |  lane 16 = C0  |  lane 24 = D0
@@ -65,6 +65,10 @@ Relative:  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
 The shell uses absolute lane numbers.
 
 - Example: `gpio82`
+- Example (long):
+```
+echo 0  > /sys/class/gpio/gpio82/value
+```
 
 ### Devicetree naming scheme
 Devicetree files use A0 to D7 relative lane names (prepended with "RK_P")
