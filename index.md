@@ -68,7 +68,7 @@ nav_order: 1
   * [Screen rotation](screen.html) for KlipperScreen/Xorg
   * [Status LEDs](status_leds.html) customization
   * [Timezone](timezone.html) configuration
-    * [Timezone updates spamming syslog](timezone.html#timezone-updates-spamming-syslog)
+    * [Timezone updates spamming syslog](timezone.html#sovol-image-timezone-updates-spamming-syslog)
 
 
 ## Troubleshooting
