@@ -28,19 +28,9 @@ This means, that it is now possible to update the kernel like any other package,
 
 ## Different image options
 
-You have the choice between Debian bookworm minimal/IOT images and Ubuntu noble server images:
+You have the choice between Debian Bookworm Minimal/IOT images and Ubuntu Noble Server images.
 
-### Ubuntu noble Server image (recommended)
-- Comes with more preinstalled packages (e.g. working NetworkManager setup)
-- See [Why Ubuntu?](armbian_images.html#why-ubuntu)
-
-### Debian bookwom Minimal/IOT image
-- Comes with just a minimal set of preinstalled packages
-- Requires additional steps to get NetworkManager play together with networkd
-
-Download locations:
-- Latest [images](https://www.armbian.com/mks-klipad50/)
-- Image [archive](https://github.com/armbian/community/releases)
+See [Armbian images](armbian_images.html) for a description of the different types and download locations.
 
 {: .note }
 > When using images from the archive:
@@ -51,7 +41,7 @@ Download locations:
 
 ### Downloading and flashing the image
 - Choose an image file from the above links.\
-  I recommend the server images, as they are easier to set up.  
+  (The server images are a little bit easier to set up)
   - Images used for testing:
     - Ubuntu noble server image: (link will follow soon) <!-- [v0.1.0-25.05.0-current](https://github.com/torte71/mksklipad50-armbian-images/releases/download/0.0.2/Armbian-unofficial_25.02.0-trunk_Mksklipad50_bookworm_current_6.12.12.img.xz) -->
     - Debian bookworm minimal image: <https://dl.armbian.com/mksklipad50/Bookworm_current_minimal>
