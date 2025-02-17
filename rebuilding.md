@@ -30,7 +30,7 @@ This means, that it is now possible to update the kernel like any other package,
 
 You have the choice between Debian Bookworm Minimal/IOT images and Ubuntu Noble Server images.
 
-See [Armbian images](armbian_images.html) for a description of the different types and download locations.
+See [Armbian images](armbian_images.html#download-options) for a description of the different types and download locations.
 
 {: .note }
 > When using images from the archive:
