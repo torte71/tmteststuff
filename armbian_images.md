@@ -16,21 +16,30 @@ Support for the MKS-Klipad50 board is now integrated in mainline Armbian.
 
 That means, that the kernel (and related stuff) can now simply be updated just like any other package, without any hazzles from overwritten devicetree files.
 
-## Download locations
-<!-- - Custom [Images](https://github.com/torte71/armbian-mksklipad50) on GitHub -->
+## Download options
+
 - Latest [images](https://www.armbian.com/mks-klipad50/) on Armbian
 - Community [releases](https://github.com/armbian/community/releases/) on Armbian
 
-{: .note }
-> I recommend using the Ubuntu Noble images (they will appear soon on the servers), as they already come with a working NetworkManager setup, whereas the Debian/Minimal require some additional steps changing from networkd to NetworkManager.
+Following image types are available:
+- Debian Minimal/IOT
+  - Smallest images containing just a minimal set of installed packages
+  - Require some work replacing networkd with NetworkManager (for installing KlipperScreen)
 
-## Why Ubuntu?
+- Ubuntu Server
+  - Comes with some more preinstalled packages compared to Minimal/IOT
+  - Network setup (for installing KlipperScreen) is a bit easier, as NetworkManager is already installed and configured
+
+- Ubuntu Desktop
+  - These images don't really make sense on that device and won't be build in the future.
+
+## Why not Debian/Server?
 That's for maintainability reasons:
-- Armbian automatic builds do not offer all possible combinations of distributions (Debian, Ubuntu) and package selections (Minimal, Server, Desktop), they don't have endless resources.
+- Armbian automatic builds do not offer all possible combinations of distributions (Debian, Ubuntu) and package selections (Minimal, Server, Desktop) due to limited resources.
 - Debian/Server is a combination currently not offered for Armbian automatic builds.
 - Providing my own Debian/Server builds would require constant work keeping them up to date.
 - The Ubuntu images contain just a small subset of the original Ubuntu setup:
-  - All proprietary Ubuntu stuff has been removed in the Armbian version.
+  - All proprietary "Canonical" stuff has been removed in the Armbian Ubuntu images.
   - Basically it is a Debian image, just with some more recent packages.
 
 ## What works well
