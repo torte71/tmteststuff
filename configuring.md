@@ -9,5 +9,3 @@ Many of the typical system settings (timezone, network, kernel, ...) can be chan
 
 Execute `armbian-config` and navigate through the menus to get an overview of its options.
 
-----
-Back to [start](index.html)
