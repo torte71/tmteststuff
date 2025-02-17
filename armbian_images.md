@@ -14,12 +14,13 @@ nav_order: 1
 
 Support for the MKS-Klipad50 board is now integrated in mainline Armbian.
 
-That means, that the kernel (and related stuff) can now simply be updated just like any other package, without any hazzles from overwritten devicetree files.
+That means, that the kernel (and related stuff) can now simply be updated just like any other package, without any hazzles from overwritten devicetree files and similar problems.
 
 ## Download options
 
-- Latest [images](https://www.armbian.com/mks-klipad50/) on Armbian
-- Community [releases](https://github.com/armbian/community/releases/) on Armbian
+- **Latest MKS-Klipad50 [images](https://www.armbian.com/mks-klipad50/) on Armbian**
+- **Community [releases](https://github.com/armbian/community/releases/) on Armbian**\
+  (Make sure to choose images with "Mksklipad50" in their name)
 
 ### Available image types
 - Debian Minimal/IOT
