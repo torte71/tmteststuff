@@ -21,7 +21,7 @@ That means, that the kernel (and related stuff) can now simply be updated just l
 - Latest [images](https://www.armbian.com/mks-klipad50/) on Armbian
 - Community [releases](https://github.com/armbian/community/releases/) on Armbian
 
-Following image types are available:
+### Available image types
 - Debian Minimal/IOT
   - Smallest images containing just a minimal set of installed packages
   - Require some work replacing networkd with NetworkManager (for installing KlipperScreen)
@@ -33,7 +33,7 @@ Following image types are available:
 - Ubuntu Desktop
   - These images don't really make sense on that device and won't be build in the future.
 
-## Why not Debian/Server?
+### Why not Debian/Server?
 That's for maintainability reasons:
 - Armbian automatic builds do not offer all possible combinations of distributions (Debian, Ubuntu) and package selections (Minimal, Server, Desktop) due to limited resources.
 - Debian/Server is a combination currently not offered for Armbian automatic builds.
