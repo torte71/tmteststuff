@@ -2,7 +2,7 @@
 title: Timezone
 layout: page
 parent: Configuring
-nav_order: 5
+nav_order: 6
 ---
 # Timezone
 {: .no_toc }
