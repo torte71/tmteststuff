@@ -5,6 +5,12 @@ parent: Configuring
 nav_order: 5
 ---
 # Status LEDs
+{: .no_toc }
+### Contents:
+{: .no_toc }
+- TOC
+{:toc}
+----
 
 ## Customizing the status LEDs
 
@@ -64,7 +70,7 @@ More triggers are available through kernel modules
 - [ledtrig-camera](https://www.kernelconfig.io/config_leds_trigger_camera) same as [led-flash](https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-class-led-flash)?
 - [ledtrig-netdev](https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-class-led-trigger-netdev): Trigger by network activity
 
-Example for ledtrig-netdev: Blink on WiFi activity
+#### Example for ledtrig-netdev: Blink on WiFi activity
 
 - Become root: `sudo su`
 - Load kernel module: `modprobe ledtrig-netdev`
