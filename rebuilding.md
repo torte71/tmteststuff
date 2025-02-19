@@ -41,7 +41,7 @@ See [Armbian images](armbian_images.html#download-options) for a description of 
 > Tip
 >
 > If you have trouble following these steps, you may take a look at Vasyl's guide:
-> <https://github.com/vasyl83/SV07update>
+> <https://github.com/vasyl83/SV07update>\
 > It covers a previous image version, but can still help understanding the steps on this guide a little better.
 
 ## Steps to create a "sovolish" Klipper installation based on these images:

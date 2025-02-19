@@ -15,7 +15,7 @@ nav_order: 4
 > Tip
 >
 > If you have trouble following these steps, you may take a look at Vasyl's guide:
-> <https://github.com/vasyl83/SV07update?tab=readme-ov-file#12-updating-the-host-mcu-rpi--mcu-firmware>
+> <https://github.com/vasyl83/SV07update?tab=readme-ov-file#12-updating-the-host-mcu-rpi--mcu-firmware>\
 > It explains the same steps in a more beginner-friendly way.
 
 ## Recompiling Klipper

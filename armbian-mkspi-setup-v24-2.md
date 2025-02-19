@@ -20,7 +20,7 @@ has_toc: false
 > Tip
 >
 > If you have trouble following these steps, you may take a look at Vasyl's guide:
-> <https://github.com/vasyl83/SV07update>
+> <https://github.com/vasyl83/SV07update>\
 > It explains the same steps in a more beginner-friendly way.
 
 Sovol's KlipperScreen is running on debian buster, which is outdated now, meaning you can no longer update system packages like ssh, etc.
