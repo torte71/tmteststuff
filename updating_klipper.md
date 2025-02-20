@@ -80,6 +80,9 @@ Some info about SD-cards taken from [here](https://forum.sovol3d.com/t/sv06-main
 1. After formatting is done, copy the firmware file to the card.\
    *Remember to give it a different name for every(!) flash operation!*
 ![sd-05-firmware](files/sd-05-firmware.png)
+
+## Flashing the printer board ("mcu")
+
 1. Eject the SD-card from the PC
 1. Power down the printer
 1. Insert the SD-card to the printer (directly accessible on SV06/SV06+, on SV07/SV07+ you need to remove the front panel).
