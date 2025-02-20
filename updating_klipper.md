@@ -71,13 +71,13 @@ Some info about SD-cards taken from [here](https://forum.sovol3d.com/t/sv06-main
 
 1. Insert the SD-card to your PC
 1. Open the explorer. Locate the card, click it with the right mouse button and select "Format":\
-![sd-01-select](sd-01-select.png)
+![sd-01-select](files/sd-01-select.png)
 1. Use *exactly* these settings, others do *not* work\
    (If there is no "FAT32" option, then the card has the wrong size. It needs to be 2GB to 8GB.)
-![sd-02-format-all](sd-02-format-all.png)
-![sd-03-format-fat32](sd-03-format-fat32.png)
-![sd-04-format-4096bytes](sd-04-format-4096bytes.png)
+![sd-02-format-all](files/sd-02-format-all.png)
+![sd-03-format-fat32](files/sd-03-format-fat32.png)
+![sd-04-format-4096bytes](files/sd-04-format-4096bytes.png)
 1. After formatting is done, copy the firmware file to the card.\
    *Remember to give it a different name for every(!) flash operation!*
-![sd-05-firmware](sd-05-firmware.png)
+![sd-05-firmware](files/sd-05-firmware.png)
 
