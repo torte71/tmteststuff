@@ -45,8 +45,11 @@ Just follow its step to point 6 "Flashing the image onto EMMC" and switch the so
 so it reads `dd of=backup.img if=/dev/mmcblk1 status=progress`.
 
 
-Instructions for updating the "klipper0120410.bin" can be found in the following link (scroll down to "RENAME THE FILE", just before the photos of the printer).
-  * <https://github.com/3DPrintDemon/How-to-Update-Sovol-Klipper-Screen-To-Latest-Klipper-SV06-and-SV07/tree/main#updating-the-host-mcu-rpi--mcu-firmware>
+~~Instructions for updating the "klipper0120410.bin" can be found in the following link (scroll down to "RENAME THE FILE", just before the photos of the printer).
+  * <https://github.com/3DPrintDemon/How-to-Update-Sovol-Klipper-Screen-To-Latest-Klipper-SV06-and-SV07/tree/main#updating-the-host-mcu-rpi--mcu-firmware>~~
+
+Instructions for updating the "mcu_firmware.bin" can be found on the [Updating Klipper](updating_klipper.html) page.
+
 
 ## Contents of the image
 

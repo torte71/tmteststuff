@@ -80,4 +80,9 @@ Some info about SD-cards taken from [here](https://forum.sovol3d.com/t/sv06-main
 1. After formatting is done, copy the firmware file to the card.\
    *Remember to give it a different name for every(!) flash operation!*
 ![sd-05-firmware](files/sd-05-firmware.png)
-
+1. Eject the SD-card from the PC
+1. Power down the printer
+1. Insert the SD-card to the printer (directly accessible on SV06/SV06+, on SV07/SV07+ you need to remove the front panel).
+1. Power on the printer and wait
+1. If flashing was successful, Klipper will be able to connect to your printer.
+1. If Klipper is not able to connect to your printer after ~5 minutes, flashing did not work. Repeat the above steps.
