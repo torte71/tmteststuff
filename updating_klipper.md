@@ -69,10 +69,10 @@ Some info about SD-cards taken from [here](https://forum.sovol3d.com/t/sv06-main
 
 ## SD-card formatting
 
-1. Insert the SD-card to your PC
+1. Insert the SD-card to your PC.
 1. Open the explorer. Locate the card, click it with the right mouse button and select "Format":\
 ![sd-01-select](files/sd-01-select.png)
-1. Use *exactly* these settings, others do *not* work\
+1. Use *exactly* these settings (FAT32, 4096bytes), others do *not* work.\
    (If there is no "FAT32" option, then the card has the wrong size. It needs to be 2GB to 8GB.)
 ![sd-02-format-all](files/sd-02-format-all.png)
 ![sd-03-format-fat32](files/sd-03-format-fat32.png)
@@ -83,9 +83,9 @@ Some info about SD-cards taken from [here](https://forum.sovol3d.com/t/sv06-main
 
 ## Flashing the printer board ("mcu")
 
-1. Eject the SD-card from the PC
-1. Power down the printer
+1. Eject the SD-card from the PC.
+1. Power down the printer.
 1. Insert the SD-card to the printer (directly accessible on SV06/SV06+, on SV07/SV07+ you need to remove the front panel).
-1. Power on the printer and wait
+1. Power on the printer and wait.
 1. If flashing was successful, Klipper will be able to connect to your printer.
 1. If Klipper is not able to connect to your printer after ~5 minutes, flashing did not work. Repeat the above steps.
