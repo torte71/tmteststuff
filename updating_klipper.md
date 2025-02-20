@@ -73,7 +73,7 @@ Some info about SD-cards taken from [here](https://forum.sovol3d.com/t/sv06-main
 1. Open the explorer. Locate the card, click it with the right mouse button and select "Format":\
 ![sd-01-select](files/sd-01-select.png)
 1. Use *exactly* these settings (FAT32, 4096bytes), others do *not* work.\
-   (If there is no "FAT32" option, then the card has the wrong size. It needs to be 2GB to 8GB.)
+   (If there is no "FAT32" option, then the card has the wrong size. It needs to be 2GB to 32GB.)
 ![sd-02-format-all](files/sd-02-format-all.png)
 ![sd-03-format-fat32](files/sd-03-format-fat32.png)
 ![sd-04-format-4096bytes](files/sd-04-format-4096bytes.png)
