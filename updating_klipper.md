@@ -70,8 +70,8 @@ Some info about SD-cards taken from [here](https://forum.sovol3d.com/t/sv06-main
 ## SD-card formatting
 
 {: .note :}
-> Use these steps if your card is max. 32GB sized.
-> Skip these steps and continue with [Partitioning the SD-card](#partitioning-the-sd-card) for bigger cards.
+> Use these steps only if your card is max. 32GB sized.\
+> If your card is bigger than 32GB, skip these steps and continue with [Partitioning the SD-card](#partitioning-the-sd-card).
 
 1. Insert the SD-card to your PC.
 1. Open the explorer. Locate the card, click it with the right mouse button and select "Format":\
@@ -81,12 +81,13 @@ Some info about SD-cards taken from [here](https://forum.sovol3d.com/t/sv06-main
 ![sd-02-format-all](files/sd-02-format-all.png)
 ![sd-03-format-fat32](files/sd-03-format-fat32.png)
 ![sd-04-format-4096bytes](files/sd-04-format-4096bytes.png)
+1. Continue at [Flashing the printer board ("mcu")](#flashing-the-printer-board-mcu)
 
 ## Partitioning the SD-card
 
 {: .note :}
-> Use these steps only if your card is bigger than 32GB.
-> Otherwise use the [SD-card formatting](#sd-card-formatting) steps and continue with [Flashing the printer board ("mcu")](#flashing-the-printer-board-mcu) afterwards.
+> Use these steps only if your card is bigger than 32GB.\
+> For smaller cards follow the [SD-card formatting](#sd-card-formatting) steps.
 
 1. Press \<Windows\>+R key combination, enter "diskmgmt.msc" and press \<Enter\>.
 ![partition-01-select](files/partition-01-select.png)
