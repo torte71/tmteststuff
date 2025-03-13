@@ -54,7 +54,7 @@ cd
     `apt install -y cage seatd xwayland`
 2. Switch to udev touchscreen rotation\
   (This supports both XOrg and Wayland, so it is more flexible)
-  2.1. Remove the "InputClass" section from `/etc/X11/xorg.conf.d/01-armbian-defaults.conf` (or comment it out)
+2.1. Remove the "InputClass" section from `/etc/X11/xorg.conf.d/01-armbian-defaults.conf` (or comment it out)
 {% raw  %}
 ```
 # Default Armbian config
@@ -75,7 +75,7 @@ EndSection
 #EndSection
 ```
 {% endraw  %}
-  2.2. Create an udev rule for touchscreen rotation: `/etc/udev/rules.d/99-calibration.rules`
+2.2. Create an udev rule for touchscreen rotation: `/etc/udev/rules.d/99-calibration.rules`
 ```
 #Bus 004 Device 003: ID 1a86:e5e3 QinHeng Electronics USB2IIC_CTP_CONTROL
 ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="e5e3", ENV{LIBINPUT_CALIBRATION_MATRIX}="0 1 0 -1 0 1 0 0 1"
