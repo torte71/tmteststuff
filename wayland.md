@@ -13,14 +13,14 @@ nav_order: 7
 ----
 
 {: .note }
-> This is experimental and has only been tested with recent Armbianb images.
+> This is experimental and has only been tested with recent Armbian images.
 >
 > It has not been tested with the original Sovol image at all.
 
 ## Pros and Cons
 
 Pros:
-- Wayland consumes much less CPU power
+- Wayland consumes less CPU power
 
 Cons:
 - Wayland does not support DPMI blanking
@@ -32,7 +32,8 @@ Cons:
 
 The simplest way is using KIAUH.
 
-During KlipperScreen you will be asked wether to use XOrg (default) or Wayland. Just choose Wayland there.
+During KlipperScreen you will be asked wether to use XOrg (default) or Wayland.\
+Just choose Wayland there.
 
 If you have already set up KlipperScreen, you can deinstall it and then reinstall it using KIAUH
 
@@ -90,9 +91,15 @@ Environment="KS_XCLIENT=/home/mks/.KlipperScreen-env/bin/python /home/mks/Klippe
 ```
 Environment="KS_XCLIENT=-rrr /home/mks/.KlipperScreen-env/bin/python /home/mks/KlipperScreen/screen.py" BACKEND=W
 ```
+  - Don't overlook the `-rrr` and `BACKEND=` option ;)
 - **Reload udev rules and restart KlipperScreen**
 ```
 udevadm control --reload-rules && udevadm trigger
 service KlipperScreen restart
 ```
+
+**Reverting to XOrg:**
+
+- Edit `/etc/systemd/system/KlipperScreen.service` and revert it to the first "Environment=" line
+- Restart KlipperScreen: `service KlipperScreen restart`
 
