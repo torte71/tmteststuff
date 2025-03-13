@@ -54,7 +54,8 @@ cd
     `apt install -y cage seatd xwayland`
 - **Switch to udev touchscreen rotation**\
   (This supports both XOrg and Wayland, so it is more flexible)
-  - **Remove the "InputClass" section** from `/etc/X11/xorg.conf.d/01-armbian-defaults.conf` (or comment it out)
+  - **Remove "InputClass" section** from `/etc/X11/xorg.conf.d/01-armbian-defaults.conf`\
+    (or comment it out)
 {% raw  %}
 ```
 # Default Armbian config
@@ -80,7 +81,7 @@ EndSection
 #Bus 004 Device 003: ID 1a86:e5e3 QinHeng Electronics USB2IIC_CTP_CONTROL
 ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="e5e3", ENV{LIBINPUT_CALIBRATION_MATRIX}="0 1 0 -1 0 1 0 0 1"
 ```
-- **Modify `/etc/systemd/system/KlipperScreen.service`**
+- **Modify KlipperScreen service**: `/etc/systemd/system/KlipperScreen.service`
   - Replace the line
 ```
 Environment="KS_XCLIENT=/home/mks/.KlipperScreen-env/bin/python /home/mks/KlipperScreen/screen.py" BACKEND=X
