@@ -50,11 +50,12 @@ cd
 >
 > And when you are done, execute `exit` to switch back to the default user.
 
-1. Install required packages:\
+- Install required packages:\
     `apt install -y cage seatd xwayland`
-1. Switch to udev touchscreen rotation\
-(This supports both XOrg and Wayland, so it is more flexible):
-1.1 Remove the "InputClass" section from `/etc/X11/xorg.conf.d/01-armbian-defaults.conf` (or comment it out)
+- Switch to udev touchscreen rotation\
+  (This supports both XOrg and Wayland, so it is more flexible)
+  - Remove the "InputClass" section from `/etc/X11/xorg.conf.d/01-armbian-defaults.conf` (or comment it out)
+{% raw  %}
 ```
 # Default Armbian config
 
@@ -73,17 +74,22 @@ EndSection
 #    Option "TransformationMatrix" "0 1 0 -1 0 1 0 0 1"
 #EndSection
 ```
-1.1 Create an udev rule for touchscreen rotation: `/etc/udev/rules.d/99-calibration.rules`
+{% endraw  %}
+  - Create an udev rule for touchscreen rotation: `/etc/udev/rules.d/99-calibration.rules`
 ```
 #Bus 004 Device 003: ID 1a86:e5e3 QinHeng Electronics USB2IIC_CTP_CONTROL
 ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="e5e3", ENV{LIBINPUT_CALIBRATION_MATRIX}="0 1 0 -1 0 1 0 0 1"
 ```
-1. Modify `/etc/systemd/system/KlipperScreen.service`\
-  Replace the line\
-`Environment="KS_XCLIENT=/home/mks/.KlipperScreen-env/bin/python /home/mks/KlipperScreen/screen.py" BACKEND=X`\
-  With this line:\
-`Environment="KS_XCLIENT=-rrr /home/mks/.KlipperScreen-env/bin/python /home/mks/KlipperScreen/screen.py" BACKEND=W`
-1. Reload udev rules and restart KlipperScreen
+- Modify `/etc/systemd/system/KlipperScreen.service`
+  - Replace the line
+```
+Environment="KS_XCLIENT=/home/mks/.KlipperScreen-env/bin/python /home/mks/KlipperScreen/screen.py" BACKEND=X`
+```
+  - With this line:
+```
+Environment="KS_XCLIENT=-rrr /home/mks/.KlipperScreen-env/bin/python /home/mks/KlipperScreen/screen.py" BACKEND=W
+```
+- Reload udev rules and restart KlipperScreen
 ```
 udevadm control --reload-rules && udevadm trigger
 service KlipperScreen restart
