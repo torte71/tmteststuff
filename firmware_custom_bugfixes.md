@@ -17,11 +17,11 @@ has_toc: false
 
 ### Step 1: Stop bootloop (replace uInitrd)
 
-To stop the image from entering the bootloop, the file "uInitrd" needs to be replaced with an older version (e.g. from [25.5.0-trunk.87](https://github.com/armbian/community/releases/download/25.5.0-trunk.87/Armbian_community_25.5.0-trunk.87_Mksklipad50_bookworm_current_6.12.15_minimal.img.xz).
+To stop the image from entering the bootloop, the file "uInitrd" needs to be replaced with an older version (e.g. from [25.5.0-trunk.87](https://github.com/armbian/community/releases/download/25.5.0-trunk.87/Armbian_community_25.5.0-trunk.87_Mksklipad50_bookworm_current_6.12.15_minimal.img.xz)).
 
-You can download a working uInitrd [here](files/uInitrd).
+You can download a working uInitrd file [here](files/uInitrd).
 
-Insert the eMMC card in the eMMC-reader and plug it into the PC. The boot partition should be mounted automatically.
+Insert the eMMC card in the eMMC-reader and plug it into the PC. The boot partition should be mounted automatically. Use the explorer (or whatever filemanager) and open the directory of the card.
 
 Replace the file "uInitrd" on the eMMC card with the version you have just downloaded (or taken from a different image).
 
@@ -32,9 +32,8 @@ With this fix, the card should boot correctly, but unless the bootloader got upd
 {: .note }
 > The next steps need to be done as root. Execute
 >
-````
+```
 sudo su
-cd
 ```
 >
 > And when you are done, execute `exit` to switch back to the default user.
