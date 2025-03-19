@@ -1,11 +1,11 @@
 ---
-title: Rebuilding on Armbian-mainline v25.5 (MKS-KLIPAD50)
+title: Rebuilding on Armbian standard v25.2.3 (MKS-KLIPAD50)
 layout: page
 parent: Custom firmware options
 nav_order: 3
 has_toc: false
 ---
-# Rebuilding on Armbian-mainline v25.5 (MKS-KLIPAD50)
+# Rebuilding on Armbian standard v25.2.3 (MKS-KLIPAD50)
 {: .no_toc }
 ### Contents:
 {: .no_toc }
@@ -21,14 +21,16 @@ This means, that it is now possible to update the kernel like any other package,
 
 ## Different image options
 
-You have the choice between Debian Bookworm Minimal/IOT images and Ubuntu Noble Server images.
+You have the choice between Debian Bookworm Minimal/IOT images and Ubuntu Noble Server/CLI images.
 
 See [Armbian images](armbian_images.html#download-options) for a description of the different types and download locations.
 
+<!--
 {: .note }
 > When using images from the archive:
 > - **Use only** images with "Mksklipad50" in their name.
 > - Do **not** use images with "desktop" in their filename or description (unless you have extremely small fingers).
+-->
 
 {: .important-title }
 > Tip
@@ -158,8 +160,8 @@ cd kiauh
 	- B (Back)
       - Q (Quit)
 
-- Adjust screen rotation  
-  - Execute `sudo nano /etc/X11/xorg.conf.d/01-armbian-defaults.conf`
+- Adjust screen and touch rotation  
+  - Screen rotation: Execute `sudo nano /etc/X11/xorg.conf.d/01-armbian-defaults.conf`
   - Copy this text:
 ```
 Section "Device"
@@ -167,22 +169,24 @@ Section "Device"
         Driver "fbdev"
         Option "Rotate" "CW"
 EndSection
-Section "InputClass"
-        Identifier "libinput touchscreen catchall"
-        MatchIsTouchscreen "on"
-        MatchDevicePath "/dev/input/event*"
-        Driver "libinput"
-        Option "TransformationMatrix" "0 1 0 -1 0 1 0 0 1"
-EndSection
 ```
     - Press \<CTRL-X\> to quit
     - Press "Y" to save
     - Press ENTER to confirm filename
-    - Clean up additional Xorg config:\
-      It does not interfere with the above config, but it is cleaner to remove it to avoid duplicate configurations.
-      - Execute `sudo rm /etc/X11/xorg.conf.d/02-driver.conf`
-    - Restart KlipperScreen:
-      - Execute `sudo service KlipperScreen restart`
+  - Clean up additional Xorg config:\
+    It does not interfere with the above config, but it is cleaner to remove it to avoid duplicate configurations.
+    - Execute `sudo rm /etc/X11/xorg.conf.d/02-driver.conf`
+  - Touch rotation: Execute `sudo nano /etc/udev/rules.d/99-calibration.rules`
+  - Copy this text:
+```
+#Bus 004 Device 003: ID 1a86:e5e3 QinHeng Electronics USB2IIC_CTP_CONTROL
+ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="e5e3", ENV{LIBINPUT_CALIBRATION_MATRIX}="0 1 0 -1 0 1 0 0 1"
+```
+    - Press \<CTRL-X\> to quit
+    - Press "Y" to save
+    - Press ENTER to confirm filename
+  - Restart KlipperScreen:
+    - Execute `sudo service KlipperScreen restart`
 
 - Set up numpy (required for input shaping)
   - Execute
