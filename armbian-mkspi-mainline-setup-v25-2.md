@@ -5,6 +5,9 @@ parent: Custom firmware archive
 nav_order: 998
 has_toc: false
 ---
+{: .note }
+> There is a [newer version](rebuilding.html) available
+
 # Rebuilding on Armbian-mainline v25.2 (MKS-PI)
 {: .no_toc }
 ### Contents:
