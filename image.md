@@ -1,9 +1,9 @@
 ---
 title: Sovolized Armbian-mainline Klipper Image v25.5 (MKS-KLIPAD50)
 layout: page
-parent: Rebuilding on Armbian-mainline v25.5 (MKS-KLIPAD50)
+parent: Rebuilding on Armbian standard v25.2.3 (MKS-KLIPAD50)
 ---
-# Sovolized Armbian-mainline Klipper Image v25.5 (MKS-KLIPAD50)
+# Sovolized Armbian standard Klipper Image v25.2.3 (MKS-KLIPAD50)
 ## For SV06/SV06+/SV07/SV07+ KlipperScreen (Makerbase MKS KLIPAD50)
 {: .no_toc }
 ### Contents:
@@ -13,12 +13,13 @@ parent: Rebuilding on Armbian-mainline v25.5 (MKS-KLIPAD50)
 ----
 A ready-to-use replacement image for Sovol's KlipperScreen can be downloaded at:  
 
-**<https://github.com/torte71/mksklipad50-klipper-images/releases/tag/v25.5.0-trunk.87-01>**
+**<https://github.com/torte71/mksklipad50-klipper-images/releases/tag/v25.2.3-01>**
 
 (Extract it using [7zip](https://www.7-zip.org/) - or use Etcher, it can directly write .img.xz files.)
 
-It is based on a recent Armbian Bookworm for the MKS-Klipad50 (v25.5.0-trunk.87-bookworm-minimal):\
-https://github.com/armbian/community/releases/download/25.5.0-trunk.87/Armbian_community_25.5.0-trunk.87_Mksklipad50_bookworm_current_6.12.15_minimal.img.xz
+It is based on a recent Armbian Bookworm for the MKS-Klipad50 (v25.2.3 Bookworm Minimal / IOT):\
+[Armbian_25.2.3_Mksklipad50_bookworm_current_6.12.19_minimal.img.xz](https://dl.armbian.com/mksklipad50/Bookworm_current_minimal)
+<!-- TODO: Link to https://archive.armbian.com/mksklipad50/archive once available -->    
 
 ## Flashing the printer board ("mcu")
 
