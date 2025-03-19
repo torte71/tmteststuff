@@ -1,5 +1,5 @@
 ---
-title: Sovolized Armbian-mainline Klipper Image v25.5 (MKS-KLIPAD50)
+title: Sovolized Armbian standard Klipper Image v25.2.3 (MKS-KLIPAD50)
 layout: page
 parent: Rebuilding on Armbian standard v25.2.3 (MKS-KLIPAD50)
 ---
@@ -44,10 +44,10 @@ Instructions for updating the "klipper0120439.bin" can be found on the [Updating
 
 ## Contents of the image
 
-The image was created as described here: [Rebuilding on Armbian-mainline v25.5 (MKS-KLIPAD50)](rebuilding.html)
+The image was created as described here: [Rebuilding on Armbian standard v25.2.3 (MKS-KLIPAD50)](rebuilding.html)
 
 Contents of the image:
-  * [MKS-Klipad50 image](https://github.com/armbian/community/releases/) (Armbian_community_25.5.0-trunk.87_Mksklipad50_bookworm_current_6.12.15_minimal.img.xz)
+  * [MKS-Klipad50 image](https://dl.armbian.com/mksklipad50/Bookworm_current_minimal) (Armbian_25.2.3_Mksklipad50_bookworm_current_6.12.19_minimal.img.xz)
   * Default Klipper install: KIAUH, Klipper (v0.12.0-439-g1fc6d214), Moonraker (v0.9.3-59-g62051108), Mainsail (v2.13.2), Fluidd (v1.32.3), KlipperScreen (v0.4.5-50-ge71fe755), Crowsnest (v4.1.11-1-g87669ccd), G-Code-Shell-Command
   * Numpy for input shaper (see [Vasyl's guide](https://github.com/vasyl83/SV07update#15-accelerometer-input-shaper))
   * Makerbase/Sovol [additions](sovol_mods#services): makerbase-beep-service, makerbase-automount-service, makerbase-soft-shutdown-service, Powerloss recovery/plr-klipper
