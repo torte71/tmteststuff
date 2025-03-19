@@ -185,6 +185,8 @@ ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="e5e3", ENV{LIBINPUT_CALIBRATION_MATR
     - Press \<CTRL-X\> to quit
     - Press "Y" to save
     - Press ENTER to confirm filename
+  - Reload udev rules:
+    - Execute `udevadm control --reload-rules && udevadm trigger`
   - Restart KlipperScreen:
     - Execute `sudo service KlipperScreen restart`
 
