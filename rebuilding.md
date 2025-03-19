@@ -43,10 +43,11 @@ See [Armbian images](armbian_images.html#download-options) for a description of 
 - Choose an image file from the above links.\
   (The server images are a little bit easier to set up)
   - Images used for testing:
-    - Ubuntu noble server image: [Noble-Server-v25.5.0-trunk.87](https://github.com/armbian/community/releases/download/25.5.0-trunk.87/Armbian_community_25.5.0-trunk.87_Mksklipad50_noble_current_6.12.15.img.xz)
-    - Debian bookworm minimal image: [Bookworm-Minimal-v25.5.0-trunk.87](https://github.com/armbian/community/releases/download/25.5.0-trunk.87/Armbian_community_25.5.0-trunk.87_Mksklipad50_bookworm_current_6.12.15_minimal.img.xz)
-- Extract the image (e.g. using [7zip](https://www.7-zip.org/)) - or use Etcher, which can write .img.xz images directly.
-- Write the extracted .img file to the eMMC card (e.g. using [Balena Etcher](https://www.balena.io/etcher/)).
+    - [Armbian 25.2.3 Noble Server / CLI](https://dl.armbian.com/mksklipad50/Noble_current_server)
+    - [Armbian 25.2.3 Bookworm Minimal / IOT](https://dl.armbian.com/mksklipad50/Bookworm_current_minimal)
+<!-- TODO: Link to https://archive.armbian.com/mksklipad50/archive once available -->    
+- Extract the image (e.g. using [7zip](https://www.7-zip.org/)) - or use Etcher or Rufus, which can write .img.xz images directly.
+- Write the extracted .img file to the eMMC card (e.g. using [Balena Etcher](https://www.balena.io/etcher/) or [Rufus](https://rufus.ie/en/)).
 
 ### Accessing the screen
 - You can either use a serial connection (recommended) or work directly on the screen
