@@ -1,8 +1,8 @@
 ---
 title: Rebuilding on Armbian community v25.5 (MKS-KLIPAD50)
 layout: page
-parent: Custom firmware options
-nav_order: 3
+parent: Custom firmware archive
+nav_order: 997
 has_toc: false
 ---
 # Rebuilding on Armbian community v25.5 (MKS-KLIPAD50)
