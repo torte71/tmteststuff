@@ -116,7 +116,6 @@ Note about **screensaver**
 - You may implement your own screensaver using "swayidle", e.g. if you use the [backlight-fix](backlight.html)
   - Install: `sudo apt install swayidle`
   - Execute `sudo chown mks:mks /sys/class/backlight/backlight/bl_power`
-  - Execute `swayidle timeout 300 'echo 4 > /sys/class/backlight/backlight/bl_power' resume 'echo 0 > /sys/class/backlight/backlight/bl_power'`
-
-(This will turn off backlight after 300 seconds of inactivity by writing "4" to `bl_power` and on activity it will write "0" to `bl_power` to turn it back on.)
+  - Execute `swayidle timeout 300 'echo 4 > /sys/class/backlight/backlight/bl_power' resume 'echo 0 > /sys/class/backlight/backlight/bl_power'`\
+    (This will turn off backlight after 300 seconds of inactivity by writing "4" to `bl_power` and on activity it will write "0" to `bl_power` to turn it back on.)
 
