@@ -49,12 +49,13 @@ This approach should work for all image versions (including Sovol's original ima
 
 ### Installation
 
-- Set access rights
+- **Set access rights**
   - Execute `sudo nano /etc/udev/rules.d/90-gpio.rules`
   - Add following line:\
     `SUBSYSTEM=="gpio", KERNEL=="gpiochip*", MODE="0660", GROUP="dialout"`
   - Use \<CTRL+X\>, "Y" and \<RETURN\> to save and exit
-- Define Moonraker power device
+  - Reboot
+- **Define Moonraker power device**
   - Edit Moonraker config: `nano ~/printer_data/config/moonraker.conf`
   - Add following lines:\
 ```
@@ -64,8 +65,11 @@ pin: gpiochip3/gpio5
 initial_state: on
 ```
   - Use \<CTRL+X\>, "Y" and \<RETURN\> to save and exit
-- Define KlipperScreen "screen_on/off" devices
-  - Edit KlipperScreen config: `nano ~/printer_data/config/KlipperScreen.conf`
+- **Define KlipperScreen "screen_on/off" devices**
+  - For original Sovol image:
+    - Edit KlipperScreen config: `nano ~/KlipperScreen/KlipperScreen.conf`
+  - For all other images:
+    - Edit KlipperScreen config: `nano ~/printer_data/config/KlipperScreen.conf`
   - Add following lines:\
     (If there is already a `[main]` section, then only add the next two lines to it.)\
 ```
@@ -74,7 +78,7 @@ screen_on_devices: Backlight
 screen_off_devices: Backlight
 ```
   - Use \<CTRL+X\>, "Y" and \<RETURN\> to save and exit
-- Restart Moonraker and Klipperscreen services:
+- **Restart Moonraker and Klipperscreen services:**
   - Execute `sudo service moonraker restart`
   - Execute `sudo service KlipperScreen restart`
 
