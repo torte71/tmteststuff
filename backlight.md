@@ -47,7 +47,7 @@ This approach works for all image versions (including Sovol's original image).
 
 ### Installation
 
-- **Set access rights**
+- **Set access rights (add udev rule)**
   - Execute `sudo nano /etc/udev/rules.d/90-gpio.rules`
   - Add following line:\
     `SUBSYSTEM=="gpio", KERNEL=="gpiochip*", MODE="0660", GROUP="dialout"`
@@ -69,7 +69,7 @@ initial_state: on
   - For all other images:
     - Edit KlipperScreen config: `nano ~/printer_data/config/KlipperScreen.conf`
   - Add following lines:\
-    (If there is already a `[main]` section, then only add the next two lines to it.)\
+    (If there already is a `[main]` section, then only append the next two lines to that section.)\
 ```
 [main]
 screen_on_devices: Backlight
@@ -79,6 +79,7 @@ screen_off_devices: Backlight
 - **Restart Moonraker and Klipperscreen services:**
   - Execute `sudo service moonraker restart`
   - Execute `sudo service KlipperScreen restart`
+  - Or just reboot (esp. if you didn't reboot after adding the udev rule)
 
 ## b) Indirect access via backlight device driver**
 
