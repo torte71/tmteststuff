@@ -16,23 +16,23 @@ parent: Hardware
 By default, the screensaver does not turn off the backlight on this device.
 But there are different approaches how that can be achieved:
 
-- **a) Direkt access via GPIOs**
-  - Advantages:
-    - Works with XOrg and Wayland
-    - No devicetree modification required
-  - Disadvantages:
-    - Has to be implemented by the application
-    - Requires direct access to GPIOs for current user
+** Option a) Direkt access via GPIOs**
+- Advantages:
+  - Works with XOrg and Wayland
+  - No devicetree modification required
+- Disadvantages:
+  - Has to be implemented by the application
+  - Requires direct access to GPIOs for current user
 
-- **b) Indirect access via backlight device driver**
-  - Advantages:
-    - Works for all XOrg applications
-    - Does not require direct GPIO access for current user
-  - Disadvantages:
-    - Does not work with Wayland (unless you code your own screensaver)
-    - Requires devicetree modification
+** Option b) Indirect access via backlight device driver**
+- Advantages:
+  - Works for all XOrg applications
+  - Does not require direct GPIO access for current user
+- Disadvantages:
+  - Does not work with Wayland (unless you code your own screensaver)
+  - Requires devicetree modification
 
-## a) Direkt access via GPIOs
+## Option a) Direkt access via GPIOs
 
 Backlight can be switched by writing either "0" (zero) or "1" (one) to gpio101 (a.k.a. "gpiochip3/gpio5", see [GPIO-naming](gpio_naming.html)). For this to work, gpio101 a) needs to be writeable by the current user and b) must not be in use by the backlight device driver.
 
@@ -83,7 +83,7 @@ screen_off_devices: Backlight
   - Execute `sudo service KlipperScreen restart`
   - Or just reboot (esp. if you didn't reboot after adding the udev rule)
 
-## b) Indirect access via backlight device driver**
+## Option b) Indirect access via backlight device driver
 
 ### Initialization bug
 
