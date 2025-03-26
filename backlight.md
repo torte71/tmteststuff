@@ -43,9 +43,7 @@ The KlipperScreen service is then responsible for switching backlight when it st
 
 ### Supported image versions
 
-??? NEEDS CHECK ???
-
-This approach should work for all image versions (including Sovol's original image).
+This approach works for all image versions (including Sovol's original image).
 
 ### Installation
 
@@ -66,7 +64,7 @@ initial_state: on
 ```
   - Use \<CTRL+X\>, "Y" and \<RETURN\> to save and exit
 - **Define KlipperScreen "screen_on/off" devices**
-  - For original Sovol image:
+  - For original Sovol image (with not-updated KlipperScreen):
     - Edit KlipperScreen config: `nano ~/KlipperScreen/KlipperScreen.conf`
   - For all other images:
     - Edit KlipperScreen config: `nano ~/printer_data/config/KlipperScreen.conf`
