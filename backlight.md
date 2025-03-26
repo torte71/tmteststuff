@@ -16,7 +16,7 @@ parent: Hardware
 By default, the screensaver does not turn off the backlight on this device.
 But there are different approaches how that can be achieved:
 
-** Option a) Direkt access via GPIOs**
+**Option a) Direkt access via GPIOs**\
 - Advantages:
   - Works with XOrg and Wayland
   - No devicetree modification required
@@ -24,7 +24,7 @@ But there are different approaches how that can be achieved:
   - Has to be implemented by the application
   - Requires direct access to GPIOs for current user
 
-** Option b) Indirect access via backlight device driver**
+**Option b) Indirect access via backlight device driver**\
 - Advantages:
   - Works for all XOrg applications
   - Does not require direct GPIO access for current user
