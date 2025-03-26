@@ -34,11 +34,12 @@ But there are different approaches how that can be achieved:
 
 ## a) Direkt access via GPIOs
 
-Backlight can be switched by writing either "0" (zero) or "1" (one) to gpio101 (a.k.a. gpiochip3/gpio5, see [GPIO-naming](gpio_naming.html)).\
-For this to work, gpio101 a) needs to be writeable by the current user and b) must not be in use by the backlight device driver.
+Backlight can be switched by writing either "0" (zero) or "1" (one) to gpio101 (a.k.a. "gpiochip3/gpio5", see [GPIO-naming](gpio_naming.html)). For this to work, gpio101 a) needs to be writeable by the current user and b) must not be in use by the backlight device driver.
 
 The KlipperScreen service is then responsible for switching backlight when it starts the screensaver:
+
 - When starting/stopping the screensaver, KlipperScreen also switches `screen_on_devices` and `screen_off_devices` (provided they have been defined).
+
 - The `screen_on_devices` and `screen_off_devices` refer to a power device, which has to be defined in Moonraker.conf and contains the gpio to be used.
 
 ### Supported image versions
@@ -47,9 +48,8 @@ This approach works for all image versions (including Sovol's original image).
 
 ### Installation
 
-- **Deinstall the [backlight-fix](#backlight-fix)**\
-  (only if you have installed it before)
-- **Set access rights (add udev rule)**
+- Deinstall the [backlight-fix](#backlight-fix) (if you have installed it before)
+- **Set GPIO access rights (add udev rule)**
   - Execute `sudo nano /etc/udev/rules.d/90-gpio.rules`
   - Add following line:\
     `SUBSYSTEM=="gpio", KERNEL=="gpiochip*", MODE="0660", GROUP="dialout"`
