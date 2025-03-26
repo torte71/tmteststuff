@@ -47,6 +47,8 @@ This approach works for all image versions (including Sovol's original image).
 
 ### Installation
 
+- **Deinstall the [backlight-fix](#backlight-fix)**\
+  (only if you have installed it before)
 - **Set access rights (add udev rule)**
   - Execute `sudo nano /etc/udev/rules.d/90-gpio.rules`
   - Add following line:\
@@ -107,6 +109,7 @@ and recent Armbian images for MKS-PI or MKS-Klipad50 (bookworm, trixie, noble, j
 #### Installation
 
 To enable backlight switching:
+- Revert the changes from [Direkt access via GPIOs](#a-direkt-access-via-gpios) (if you have implemented that before)
 - Download the script: `wget https://torte71.github.io/InsideSovolKlipperScreen/files/backlight-fix`
 - Install: `sudo bash backlight-fix install`
 - Uninstall:  `sudo bash backlight-fix remove`
