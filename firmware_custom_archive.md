@@ -16,7 +16,7 @@ has_toc: false
   - Rebuilding [guide](rebuilding.html)
 
 {: .note }
-> All following images are **older** versions, listed for reference
+> All following images are **older** versions, listed for reference \
 > (even if the version numbers seem to tell the opposite).
 
 ### Previous firmwares (based on MKS-Klipad50 images):
