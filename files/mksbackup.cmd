@@ -8,8 +8,8 @@ plink %HOST% -l %USER% -pw %PASS% ^
     "do BKDIR=$BASE/mksbackup; if [ -d $BKDIR ]; then "^
       "echo FOUND: $BKDIR ; "^
       "mount / -o remount,rw ;"^
-      "dd if=/dev/mmcblk1 of=$BKDIR/$(date +%%Y%%m%%d-%%H%%M).img status=progress ;"^
-      "poweroff ; break ;"^
+      "dd if=/dev/mmcblk1 of=$BKDIR/$(date +%%Y%%m%%d-%%H%%M).img status=progress "^
+      "&& poweroff ; break ;"^
     "fi ;"^
   "done"
 

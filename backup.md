@@ -40,6 +40,9 @@ nav_order: 3
 - Call it e.g. "mksbackup.cmd"
 - Or download the [mksbackup.cmd](files/mksbackup.cmd)
 - Make sure it is in the same directory as plink.exe
+- If the KlipperScreen can not be found with the name "mkspi" on your network,
+  then modify the line `set HOST=mkspi` and replace "mkspi" with the IP-address of the KlipperScreen (as seen on the network panel).
+- If you have changed the root password, then adjust the line `set PASS=makerbase` accordingly.
 
 ```
 setlocal
@@ -52,8 +55,8 @@ plink %HOST% -l %USER% -pw %PASS% ^
     "do BKDIR=$BASE/mksbackup; if [ -d $BKDIR ]; then "^
       "echo FOUND: $BKDIR ; "^
       "mount / -o remount,rw ;"^
-      "dd if=/dev/mmcblk1 of=$BKDIR/$(date +%%Y%%m%%d-%%H%%M).img status=progress ;"^
-      "poweroff ; break ;"^
+      "dd if=/dev/mmcblk1 of=$BKDIR/$(date +%%Y%%m%%d-%%H%%M).img status=progress "^
+      "&& poweroff ; break ;"^
     "fi ;"^
   "done"
 
@@ -82,7 +85,7 @@ endlocal
   Once you know that correct size, you can compare it to the size of the later backups done with "mksbackup.cmd".
   If the sizes differ, then something went wrong.
 
-Example output (from backing up a 16GB eMMC card):
+Example output:
 ```
 d:\putty>mksbackup.cmd
 
@@ -94,13 +97,13 @@ d:\putty>set USER=root
 
 d:\putty>set PASS=makerbase
 
-d:\putty>plink mkspi -l root -pw makerbase   "for BASE in $(grep gcodes\/USB /proc/mounts|cut -d ' ' -f 2); "    "do BKDIR=$BASE/mksbackup; if [ -d $BKDIR ]; then "      "echo FOUND: $BKDIR ; "      "mount / -o remount,rw ;"      "dd if=/dev/mmcblk1 of=$BKDIR/$(date +%Y%m%d-%H%M).img status=progress ;"      "poweroff ; break ;"    "fi ;"  "done"
+d:\putty>plink mkspi -l root -pw makerbase   "for BASE in $(grep gcodes\/USB /proc/mounts|cut -d ' ' -f 2); "    "do BKDIR=$BASE/mksbackup; if [ -d $BKDIR ]; then "      "echo FOUND: $BKDIR ; "      "mount / -o remount,rw ;"      "dd if=/dev/mmcblk1 of=$BKDIR/$(date +%Y%m%d-%H%M).img status=progress "      "&& poweroff ; break ;"    "fi ;"  "done"
 Server refused our key
 FOUND: /home/mks/printer_data/gcodes/USB/mksbackup
-15627008512 bytes (16 GB, 15 GiB) copied, 1171 s, 13.3 MB/s
-30535680+0 records in
-30535680+0 records out
-15634268160 bytes (16 GB, 15 GiB) copied, 1171.56 s, 13.3 MB/s
+7817642496 bytes (7.8 GB, 7.3 GiB) copied, 565 s, 13.8 MB/s
+15269888+0 records in
+15269888+0 records out
+7818182656 bytes (7.8 GB, 7.3 GiB) copied, 565.029 s, 13.8 MB/s
 FATAL ERROR: Remote side unexpectedly closed network connection
 
 d:\putty>endlocal
