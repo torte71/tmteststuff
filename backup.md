@@ -23,6 +23,7 @@ nav_order: 3
   (the default eMMC card is 8GB, use at least a 16GB pen drive)
 - KlipperScreen with active makerbase-automount.service\
   (this is the default for the original Sovol image and my klipperized Armbian images)
+- Reliable network connection (the backup will stop uncompleted when network connection drops too early)
 
 ### Prepare the USB pen drive
 - Format an USB pen drive with "exFAT"\
@@ -73,6 +74,13 @@ endlocal
 - When the KlipperScreen has shut down, remove the USB pen drive.
 - The backed up image can be found in the "mksbackup" directory.
 - The filename will reflect the date and time when the backup was started.
+
+### Check the completeness of the backup file
+- If the network connection broke during the backup, the backup will be incomplete!
+- If the KlipperScreen did not shut down after the backup, then network connection probably did break too early.
+- Best is to use an eMMC-USB adapter at least once to backup the eMMC card, to find out the correct size.
+  Once you know that correct size, you can compare it to the size of the later backups done with "mksbackup.cmd".
+  If the sizes differ, then something went wrong.
 
 Example output (from backing up a 16GB eMMC card):
 ```
