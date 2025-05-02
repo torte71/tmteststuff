@@ -17,20 +17,24 @@ nav_order: 3
 - Follow [Gergo's Youtube guide](https://www.youtube.com/watch?v=PrC8zaVCHys)
 
 ## Backup eMMC to USB pen without opening the KlipperScreen
+
 ### Requirements
 - USB pen drive bigger than the eMMC card\
   (the default eMMC card is 8GB, use at least a 16GB pen drive)
 - KlipperScreen with active makerbase-automount.service\
   (this is the default for the original Sovol image and my klipperized Armbian images)
+
 ### Prepare the USB pen drive
 - Format an USB pen drive with "exFAT"\
   (do NOT use FAT32, it doesn't support the large file;\
   do NOT use NTFS, as its implementation is very slow)
 - Create an empty directory on that drive called "mksbackup"\
   (this is required to identify the correct drive).
+
 ### Download "plink.exe" from the "putty" suite
-- Download location: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+- Download location: <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>
 - (if unsure, use the 32bit x86 version. If it doesn't start, use the 64bit x86 version)
+
 ### Create following file in the same directory as plink.exe
 - Call it e.g. "mksbackup.cmd"
 - Or download the [mksbackup.cmd](files/mksbackup.cmd)
@@ -53,6 +57,7 @@ plink %HOST% -l %USER% -pw %PASS% ^
 
 endlocal
 ```
+
 ### Start the backup process
 - Do NOT have any print jobs running on that KlipperScreen!
 - Insert the USB pen drive into the (running) KlipperScreen.
@@ -62,6 +67,7 @@ endlocal
 - After the backup is done, the KlipperScreen is shut down automatically.\
   (The final line will read `FATAL ERROR: Remote side unexpectedly closed network connection`\
    this is intended behaviour, nothing to worry about).
+
 ### Wait for the backup to finish
 - When the KlipperScreen has shut down, remove the USB pen drive.
 - The backed up image can be found in the "mksbackup" directory.
