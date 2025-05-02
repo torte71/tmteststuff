@@ -16,7 +16,8 @@ nav_order: 3
 - This is the fastest, easiest and most reliable way
 - Follow [Gergo's Youtube guide](https://www.youtube.com/watch?v=PrC8zaVCHys)
 
-## Backup eMMC to USB pen without opening the KlipperScreen
+## Backup eMMC to USB pen without eMMC-USB adapter
+**(also without opening the KlipperScreen)**
 
 ### Requirements
 - USB pen drive bigger than the eMMC card\
@@ -26,15 +27,16 @@ nav_order: 3
 - Reliable network connection (the backup will stop uncompleted when network connection drops too early)
 
 ### Prepare the USB pen drive
-- Format an USB pen drive with "exFAT"\
-  (do NOT use FAT32, it doesn't support the large file;\
-  do NOT use NTFS, as its implementation is very slow)
+- Format an USB pen drive with "exFAT"
+  - Do NOT use FAT32, it doesn't support the large files
+  - Do NOT use NTFS, as its implementation is very slow
 - Create an empty directory on that drive called "mksbackup"\
   (this is required to identify the correct drive).
 
 ### Download "plink.exe" from the "putty" suite
 - Download location: <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>
-- (if unsure, use the 32bit x86 version. If it doesn't start, use the 64bit x86 version)
+  - If unsure, use the 32bit x86 version.
+  - If the 32bit x86 version can't be executed, use the 64bit x86 version.
 
 ### Create following file in the same directory as plink.exe
 - Call it e.g. "mksbackup.cmd"
