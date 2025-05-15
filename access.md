@@ -57,8 +57,7 @@ Here you will find several ways to log into the KlipperScreen.
       * Enter `boot` to continue normal booting
       * Enter `help` for a list of supported commands.
       * Depending on the bootloader version, use one of the following approaches to boot from USB:
-        * U-Boot before 25.x:
-	  * Enter `run bootcmd_usb0`
+        * U-Boot before 25.x: Enter `run bootcmd_usb0`
 	* U-Boot 25.x (and newer): Enter
 ```
 setenv boot_targets usb
