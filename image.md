@@ -40,7 +40,7 @@ If you don't have that adapter, you can follow these guides for flashing using U
 Just follow its step to point 6 "Flashing the image onto EMMC" and switch the source ("if=") and destination ("of="),
 so it reads `dd of=backup.img if=/dev/mmcblk1 status=progress`.
 
-Instructions for updating the "klipper0120458.bin" can be found on the [Updating Klipper](updating_klipper.html) page.
+Instructions for updating the "klipper0130213.bin" can be found on the [Updating Klipper](updating_klipper.html) page.
 
 ## Contents of the image
 

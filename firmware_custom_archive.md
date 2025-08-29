@@ -19,8 +19,8 @@ has_toc: false
 ### Previous firmwares (based on MKS-Klipad50 images):
 
 - MKS-Klipad50 v25.2.3 Bookworm (standard support image)
-  - Ready built [image](armbian-mksklipad50-standard-image-v25-2.md)
-  - Rebuilding [guide](armbian-mksklipad50-standard-setup-v25-2.md)
+  - Ready built [image](armbian-mksklipad50-standard-image-v25-2.html)
+  - Rebuilding [guide](armbian-mksklipad50-standard-setup-v25-2.html)
 
 {: .note }
 > All following images are **older** versions, listed for reference \
