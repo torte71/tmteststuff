@@ -197,12 +197,12 @@ ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="e5e3", ENV{LIBINPUT_CALIBRATION_MATR
     - Execute `sudo service KlipperScreen restart`
 
 - Set up numpy and matplotlib (required for input shaping)
-  - Execute
+  - Execute (on Bookworm based images):
 ```
 sudo apt install -y python3-numpy python3-matplotlib libatlas-base-dev libopenblas-dev
 ~/klippy-env/bin/pip install -v numpy
 ```
-  - For recent images based on trixie, use these commands instead:
+  - For recent images based on Trixie, use these commands instead:
 ```
 sudo apt install -y python3-numpy python3-matplotlib libatlas3-base libopenblas-dev
 ~/klippy-env/bin/pip install -v numpy

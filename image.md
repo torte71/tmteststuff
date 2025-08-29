@@ -1,9 +1,9 @@
 ---
-title: Sovolized Armbian standard Klipper Image v25.2.3 (MKS-KLIPAD50)
+title: Sovolized Armbian standard Klipper Image v25.8.1 Trixie (MKS-KLIPAD50)
 layout: page
-parent: Rebuilding on Armbian standard v25.2.3 (MKS-KLIPAD50)
+parent: Rebuilding on Armbian standard v25.8.1 Trixie (MKS-KLIPAD50)
 ---
-# Sovolized Armbian standard Klipper Image v25.2.3 (MKS-KLIPAD50)
+# Sovolized Armbian standard Klipper Image v25.8.1 Trixie (MKS-KLIPAD50)
 ## For SV06/SV06+/SV07/SV07+ KlipperScreen (Makerbase MKS KLIPAD50)
 {: .no_toc }
 ### Contents:
@@ -13,12 +13,12 @@ parent: Rebuilding on Armbian standard v25.2.3 (MKS-KLIPAD50)
 ----
 A ready-to-use replacement image for Sovol's KlipperScreen can be downloaded at:  
 
-**<https://github.com/torte71/mksklipad50-klipper-images/releases/tag/v25.2.3-standard-01>**
+**<https://github.com/torte71/mksklipad50-klipper-images/releases/tag/v25.8.1-standard-01>**
 
 (Extract it using [7zip](https://www.7-zip.org/) - or use Etcher, it can directly write .img.xz files.)
 
-It is based on a recent Armbian Bookworm for the MKS-Klipad50 (v25.2.3 Bookworm Minimal / IOT):\
-[Armbian_25.2.3_Mksklipad50_bookworm_current_6.12.19_minimal.img.xz](https://dl.armbian.com/mksklipad50/Bookworm_current_minimal)
+It is based on a recent Armbian Bookworm for the MKS-Klipad50 (v25.8.1 Trixie Minimal / IOT):\
+[Armbian_25.8.1_Mksklipad50_trixie_current_6.12.41_minimal.img.xz](https://dl.armbian.com/mksklipad50/Trixie_current_minimal)
 <!-- TODO: Link to https://archive.armbian.com/mksklipad50/archive once available -->    
 
 ## Flashing the printer board ("mcu")
@@ -44,11 +44,11 @@ Instructions for updating the "klipper0120458.bin" can be found on the [Updating
 
 ## Contents of the image
 
-The image was created as described here: [Rebuilding on Armbian standard v25.2.3 (MKS-KLIPAD50)](rebuilding.html)
+The image was created as described here: [Rebuilding on Armbian standard v25.8.1 Trixie (MKS-KLIPAD50)](rebuilding.html)
 
 Contents of the image:
-  * [MKS-Klipad50 image](https://dl.armbian.com/mksklipad50/Bookworm_current_minimal) (Armbian_25.2.3_Mksklipad50_bookworm_current_6.12.19_minimal.img.xz)
-  * Default Klipper install: KIAUH, Klipper (v0.12.0-458-gd886c176), Moonraker (v0.9.3-68-gebaa6645), Mainsail (v2.13.2), Fluidd (v1.33.0), KlipperScreen (v0.4.5-53-g4395424f), Crowsnest (v4.1.12-1-g9623b5fe), G-Code-Shell-Command
+  * [MKS-Klipad50 image](https://dl.armbian.com/mksklipad50/Trixie_current_minimal) (Armbian_25.8.1_Mksklipad50_trixie_current_6.12.41_minimal.img.xz)
+  * Default Klipper install: KIAUH, Klipper (v0.13.0-213), Moonraker (v0.9.3-102), Mainsail (v2.14.0), Fluidd (v1.34.3), KlipperScreen (v0.4.6-11), Crowsnest (v4.1.16-1), G-Code-Shell-Command
   * Numpy for input shaper (see [Vasyl's guide](https://github.com/vasyl83/SV07update#15-accelerometer-input-shaper))
   * Makerbase/Sovol [additions](sovol_mods#services): makerbase-beep-service, makerbase-automount-service, makerbase-soft-shutdown-service, Powerloss recovery/plr-klipper
   * Sovol's [printer.cfg for SV06](https://github.com/Sovol3d/SOVOL_KLIPAD50_SYSTEM/blob/main/klipper_configuration/SV06/printer.cfg) with following changes:
