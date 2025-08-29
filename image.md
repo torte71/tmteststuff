@@ -24,7 +24,7 @@ It is based on a recent Armbian Bookworm for the MKS-Klipad50 (v25.8.1 Trixie Mi
 ## Flashing the printer board ("mcu")
 
 Please note that the **printer itself ("mcu") needs to be updated as well** (not just the KlipperScreen), otherwise it will complain about an outdated klipper version on the mcu and not be able to print.
-For convenience, there is a **ready compiled klipper0120458.bin** in the image (which you can easily access directly after flashing, it's located in the root of the eMMC/USB-stick).
+For convenience, there is a **ready compiled klipper0130213.bin** in the image (which you can easily access directly after flashing, it's located in the root of the eMMC/USB-stick).
 
 ## Flashing the the image to eMMC card
 
