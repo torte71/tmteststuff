@@ -11,6 +11,10 @@ nav_order: 1
 
 # Sovol KlipperScreen (Makerbase MKS KLIPAD50)
 
+### These pages refer to the RK3328 MKS-Klipad50 board, sold by Sovol as "KlipperScreen" for the SV06/SV06+/SV07/SV07+ printer range.\
+### The "ACE" product line (e.g. SV06-ACE) uses a different, RK3308 based board. Those are **NOT** covered by this guide (and as I don't own such a board, so I can't tell much about it).
+
+
 ## Hardware
   * [Hardware](hardware.html) description of the MKS Klipad50
   * [GPIO naming](gpio_naming.html)
