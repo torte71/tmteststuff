@@ -55,7 +55,7 @@ See [Armbian images](armbian_images.html#download-options) for a description of 
   Stay with Debian Trixie for now.
   - Images used for testing:
     - [Armbian 26.5.1 Trixie Minimal / IOT](https://dl.armbian.com/mksklipad50/Trixie_current_minimal)
-    - ~~Armbian 26.2.1 Noble Minimal / IOT~~
+    - ~~Armbian 26.5.1 Noble Minimal / IOT~~
     - Older images for the MKS-Klipad50 can be found in the [archive](https://archive.armbian.com/mksklipad50/archive/).\
       See [Custom firmware archive](firmware_custom_archive.html) for setup steps on older image versions.
 - Option 1: Use *Armbian imager* to do the download and flash
